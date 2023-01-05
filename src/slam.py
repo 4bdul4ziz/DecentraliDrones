@@ -117,13 +117,80 @@ def slam():
         # wait for 1 second
         time.sleep(1)
 
-slam()
+# function to dodge obstacles
+def dodge_obstacles():
+    # get current pose
+    pose = get_pose()
 
-# that's enough fun for now. let's quit cleanly
-client.armDisarm(False)
-client.reset()
+    # get current depth
+    depth = get_depth()
+
+    # get current frame
+    frame = get_image()
+    frame = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+    frame = cv2.resize(frame, (0,0), fx=0.5, fy=0.5)
+
+    # get current position
+    x = pose.position.x_val
+    y = pose.position.y_val
+    z = pose.position.z_val
+
+    # get current rotation
+    qx = pose.orientation.x_val
+    qy = pose.orientation.y_val
+    qz = pose.orientation.z_val
+    qw = pose.orientation.w_val
+
+    # get current depth
+    d = depth[100, 100]
+
+    # if depth is less than 2m
+    if d < 2:
+        # move up
+        client.moveByVelocityAsync(0, 0, 1, 1).join()
+        # move forward
+        client.moveByVelocityAsync(1, 0, 0, 1).join()
+        # move down
+        client.moveByVelocityAsync(0, 0, -1, 1).join()
+        # move backward
+        client.moveByVelocityAsync(-1, 0, 0, 1).join()
+
+    # if depth is greater than 2m
+    else:
+        # move forward
+        client.moveByVelocityAsync(1, 0, 0, 1).join()
+
+    # wait for 1 second
+    time.sleep(1)
+
+# function to land the drone safely
+def land():
+    # get current pose
+    pose = get_pose()
+
+    # get current position
+    x = pose.position.x_val
+    y = pose.position.y_val
+    z = pose.position.z_val
+
+    # if drone is above 1m
+    if z > 1:
+        # move down
+        client.moveByVelocityAsync(0, 0, -1, 1).join()
+
+    # if drone is below 1m
+    else:
+        # land
+        client.landAsync().join()
+
+while True:
+    slam()
+    dodge_obstacles()
+    land()
+
+# disconnect from the drone
 client.enableApiControl(False)
+client.armDisarm(False)
 
-# shut down simulator
-client.simStop()
-client.simPause(False)
+# reset the drone
+client.reset()
