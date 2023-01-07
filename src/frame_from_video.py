@@ -22,7 +22,6 @@ while capture.isOpened():
     sucess, image = capture.read()
     
     if sucess and frame_count == 0:
-        cv2.imwrite(f'./sim/videos/{VIDEO_NAME}_frames/frame_{i}.jpg', img=image)
         cv2.imwrite(os.path.abspath(os.path.join(os.getcwd(), f'{VIDEO_NAME}_frames/frame_{i}.jpg')), img=image)
         i+=1
         
