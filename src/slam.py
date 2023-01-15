@@ -16,7 +16,7 @@ client.armDisarm(True)
 
 # Async methods returns Future. Call join() to wait for task to complete.
 client.takeoffAsync().join()
-client.moveToPositionAsync(-10, 10, -10, 5).join()
+client.moveToPositionAsync(10, 10, -10, 5).join()
 
 def get_image():
     responses = client.simGetImages([airsim.ImageRequest("0", airsim.ImageType.DepthVis, False, False)])
@@ -194,4 +194,3 @@ client.armDisarm(False)
 
 # reset the drone
 client.reset()
-
