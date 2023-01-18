@@ -65,7 +65,7 @@ def compute_essential_normalized_matrix(p1, p2, compute_essential=False):
 
 	F = np.dot(T1.T, np.dot(F, T2))
 
-	F = F / F[2, 2]
+	F = F / F[1, 1]
 
 	return F
 
