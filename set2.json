@@ -1,0 +1,160 @@
+{
+  "SeeDocsAt": "https://github.com/Microsoft/AirSim/blob/master/docs/settings.md",
+  "SettingsVersion": 1.2,
+  "SimMode":"Multirotor",
+  "Vehicles": {
+        "Drone1": {
+            "VehicleType": "SimpleFlight",
+            "X": 0,
+            "Y": 0,
+            "Z": -2,
+            "DefaultVehicleState": "Disarmed",
+            "EnableCollisionPassthrogh": false,
+            "EnableCollisions": true,
+            "AllowAPIAlways": true,
+            "IsFpvVehicle":false,
+            "EnableTrace":false,
+            "RC": {
+                "RemoteControlID": 0,
+                "AllowAPIWhenDisconnected": false
+            }
+        },
+        "Drone2": {
+            "VehicleType": "SimpleFlight",
+            "X": 0,
+            "Y": -2,
+            "Z": -2,
+            "DefaultVehicleState": "Disarmed",
+            "EnableCollisionPassthrogh": false,
+            "EnableCollisions": true,
+            "AllowAPIAlways": true,
+            "IsFpvVehicle":false,
+            "EnableTrace":false,
+            "RC": {
+                "RemoteControlID": 0,
+                "AllowAPIWhenDisconnected": false
+            }
+        },
+        "Drone3": {
+            "VehicleType": "SimpleFlight",
+            "X": 0,
+            "Y": -4,
+            "Z": -2,
+            "DefaultVehicleState": "Disarmed",
+            "EnableCollisionPassthrogh": false,
+            "EnableCollisions": true,
+            "AllowAPIAlways": true,
+            "EnableTrace":false,
+            "IsFpvVehicle":false,
+            "RC": {
+                "RemoteControlID": 0,
+                "AllowAPIWhenDisconnected": false
+            }
+        },
+        "Drone4": {
+            "VehicleType": "SimpleFlight",
+            "X": 0,
+            "Y": -6,
+            "Z": -2,
+            "DefaultVehicleState": "Disarmed",
+            "EnableCollisionPassthrogh": false,
+            "EnableCollisions": true,
+            "AllowAPIAlways": true,
+            "EnableTrace":false,
+            "IsFpvVehicle":false,
+            "RC": {
+                "RemoteControlID": 0,
+                "AllowAPIWhenDisconnected": false
+            }
+        },
+        "Drone5": {
+            "VehicleType": "SimpleFlight",
+            "X": 0,
+            "Y": -8,
+            "Z": -2,
+            "DefaultVehicleState": "Disarmed",
+            "EnableCollisionPassthrogh": false,
+            "EnableCollisions": true,
+            "AllowAPIAlways": true,
+            "EnableTrace":false,
+            "IsFpvVehicle":true,
+            "RC": {
+                "RemoteControlID": 0,
+                "AllowAPIWhenDisconnected": false
+            }
+        },
+        "Drone6": {
+            "VehicleType": "SimpleFlight",
+            "X": 0,
+            "Y": -10,
+            "Z": -2,
+            "DefaultVehicleState": "Disarmed",
+            "EnableCollisionPassthrogh": false,
+            "EnableCollisions": true,
+            "AllowAPIAlways": true,
+            "EnableTrace":false,
+            "IsFpvVehicle":true,
+            "RC": {
+                "RemoteControlID": 0,
+                "AllowAPIWhenDisconnected": false
+            }
+        },
+        "Drone7": {
+            "VehicleType": "SimpleFlight",
+            "X": 0,
+            "Y": -12,
+            "Z": -2,
+            "DefaultVehicleState": "Disarmed",
+            "EnableCollisionPassthrogh": false,
+            "EnableCollisions": true,
+            "AllowAPIAlways": true,
+            "EnableTrace":false,
+            "IsFpvVehicle":true,
+            "RC": {
+                "RemoteControlID": 0,
+                "AllowAPIWhenDisconnected": false
+            }
+        }
+  },
+  "CameraDefaults": {
+    "CaptureSettings": [
+      {
+        "ImageType": 0,
+        "Width": 256,
+        "Height": 192,
+        "FOV_Degrees": 90,
+        "AutoExposureSpeed": 100,
+        "MotionBlurAmount": 0
+      },
+      {
+        "ImageType": 1,
+        "Width": 256,
+        "Height": 192,
+        "FOV_Degrees": 90,
+        "AutoExposureSpeed": 100,
+        "MotionBlurAmount": 0
+      },
+      {
+        "ImageType": 5,
+        "Width": 256,
+        "Height": 192,
+        "FOV_Degrees": 90,
+        "AutoExposureSpeed": 100,
+        "MotionBlurAmount": 0
+      }
+    ]
+  },
+  "SubWindows": [
+    {"WindowID": 0, "CameraName": "0", "ImageType": 3, "VehicleName": "", "Visible": true},
+    {"WindowID": 1, "CameraName": "0", "ImageType": 5, "VehicleName": "", "Visible": true},
+    {"WindowID": 2, "CameraName": "0", "ImageType": 0, "VehicleName": "", "Visible": true}
+  ],
+  "SegmentationSettings": {
+    "InitMethod": "",
+    "MeshNamingMethod": "",
+    "OverrideExisting": false,
+"Gimbal": {
+      "Stabilization": 1
+    }
+  }
+}
