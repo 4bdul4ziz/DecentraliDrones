@@ -1,0 +1,3 @@
+#ignore pycaches
+
+src\vidSlam\__pycache__
