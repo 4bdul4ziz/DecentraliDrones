@@ -1,15 +1,4 @@
-'''
-Author: Sunghoon Hong
-Title: ra2c.py
-Description:
-    Recurrent Advantage Actor Critic Agent for Airsim
-Detail:
-    - not use join()
-    - reset for zero-image error
-    - tensorflow v1 + keras
-    - hard update for target critic
 
-'''
 
 
 import os
