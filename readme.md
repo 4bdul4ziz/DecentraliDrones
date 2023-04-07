@@ -12,6 +12,10 @@ Welcome to DecentraliDrone, a reliable and efficient drone delivery system for t
 
 4. Wide coverage area: Our drones are capable of flying long distances and can make deliveries to a wide range of locations.
 
+# Figma Design
+
+Here's the link to our Figma design for the application UI: [https://www.figma.com/file/uUzRa5nWk5w5iCr6rFJvrs/Drone-Delivery-App-Prototype?node-id=33%3A444&t=NZsoGaZYzjknIV5f-1] 
+
 # Instructions to run the project
 
 1. Clone the repository
