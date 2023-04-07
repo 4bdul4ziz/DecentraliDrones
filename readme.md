@@ -52,4 +52,3 @@ The drones should now carry out a fixed delvery route and make deliveries to the
  - Tensorflow 2.5.0
  - Keras 2.5.0
 
-This project was developed and maintained as per the course requirements of the CSE1901: Technical Answers for Real World Problems at Vellore Institure of Technology, Chennai, India.
