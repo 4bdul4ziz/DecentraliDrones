@@ -1,3 +1,6 @@
 #ignore pycaches
 
 src\vidSlam\__pycache__
+lab exps
+.vscode
+.DS_Store
