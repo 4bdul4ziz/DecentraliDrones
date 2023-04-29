@@ -1,0 +1,59 @@
+\documentclass{article}
+\usepackage{graphicx} % Required for inserting images
+
+\title{Algorithm}
+\author{SAMIK SARASWAT 20BRS1205}
+
+\date{April 2023}
+
+
+
+\usepackage{algorithm,algorithmic}
+\begin{document}
+ \begin{algorithm}
+ \caption{TD3 Algorithm}
+ \begin{algorithmic}[1]
+ \renewcommand{\algorithmicrequire}{\textbf{Input:}}
+ \renewcommand{\algorithmicensure}{\textbf{Output:}}
+ \REQUIRE $S, A, R(s, a), T(s, a, s'), \gamma, R, N, M, T, D, \rho$
+ \ENSURE  $\nu(s, \theta_\nu, Q1(s, a, \theta_{Q1}), Q2(s, a, \theta_{Q2})$
+ 
+ %\\ \textit{Initialisation} :
+ 
+  \STATE $\theta^1 \leftarrow random$
+  \STATE $\theta^2 \leftarrow random$
+  \STATE $\theta^{\nu} \leftarrow random$
+  \STATE Critic network initialization:
+  \STATE $Q1(s,a; \theta^1) \leftarrow \theta^1$
+  \STATE $Q2(s,a; \theta^2) \leftarrow \theta^2$
+  \STATE ${\nu}(s,a; \theta^{\nu}) \leftarrow \theta^{\nu}$
+  \STATE Target network initialization:
+  \STATE $Q1^{'}(s,a; \theta^1) \leftarrow \theta^1$
+  \STATE $Q2^{'}(s,a; \theta^2) \leftarrow \theta^2$
+  \STATE ${\nu}^{'}(s,a; \theta^{\nu}) \leftarrow \theta^{\nu}$
+  
+  \FOR {$i = 1 to M$}
+    \FOR{$j = 1 to T$} 
+      \STATE $a \leftarrow \nu(s) + N$
+      \STATE $s', r = ENV-STEP(a)$
+      \STATE $R \leftarrow (s, a, r, s')$
+      \STATE $B \leftarrow SAMPLE(R)$
+      \STATE $y \leftarrow r + \gamma*min(Q1'(s', \nu'(s')), Q2'(s',\nu'(s')))$
+      \STATE $L \leftarrow (y - Q1(s, a)^2 + (y - Q2(s, a))^2$
+      \STATE $\theta_{Q1} \leftarrow \theta_{Q1} - \alpha_Q*\nabla_{\theta_{Q1}}L$ 
+      \STATE $\theta_{Q2} \leftarrow \theta_{Q2} - \alpha_Q*\nabla_{\theta_{Q2}}L$ 
+      
+      \IF {$i \% d = 0$}
+          \STATE $\nu(s) = max( Q1(s,\nu(s)) + Q2(s, \nu(s))$
+          \STATE $Q1^{'}(s,a) = \rho*Q1^{'}(s,a) + (1- \rho) * Q1(s,a)$
+          \STATE $Q2^{'}(s,a) =\rho*Q2^{'}(s,a) + (1- \rho) * Q2(s,a)$
+          \STATE $\nu^{'}(s) =\rho* \nu^{'}(s) + (1-\rho) * \nu(s)$
+      \ENDIF
+    \ENDFOR
+  \ENDFOR
+ \RETURN $P$ 
+ \end{algorithmic} 
+ \end{algorithm}
+
+\end{document}
+
