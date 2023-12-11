@@ -1,40 +1,109 @@
-\documentclass[conference]{IEEEtran}
+%% 
+%% Copyright 2007-2020 Elsevier Ltd
+%% 
+%% This file is part of the 'Elsarticle Bundle'.
+%% ---------------------------------------------
+%% 
+%% It may be distributed under the conditions of the LaTeX Project Public
+%% License, either version 1.2 of this license or (at your option) any
+%% later version.  The latest version of this license is in
+%%    http://www.latex-project.org/lppl.txt
+%% and version 1.2 or later is part of all distributions of LaTeX
+%% version 1999/12/01 or later.
+%% 
+%% The list of all files belonging to the 'Elsarticle Bundle' is
+%% given in the file `manifest.txt'.
+%% 
+%% Template article for Elsevier's document class `elsarticle'
+%% with harvard style bibliographic references
+
+\documentclass[preprint,12pt]{elsarticle}
 \usepackage{graphicx}
+%% Use the option review to obtain double line spacing
+%% \documentclass[preprint,review,12pt]{elsarticle}
 
-\title{DecentraliDrone: A Decentralized, Fully Autonomous Drone Delivery System for Reliable, Efficient Transport of Goods}
-\author{
-\IEEEauthorblockN{Abdul Aziz A.B}
-\IEEEauthorblockA{abdulaziz.ahamed2020@vitstudent.ac.in}
-\IEEEauthorblockT{VIT University}
+%% Use the options 1p,twocolumn; 3p; 3p,twocolumn; 5p; or 5p,twocolumn
+%% for a journal layout:
+%% \documentclass[final,1p,times]{elsarticle}
+%% \documentclass[final,1p,times,twocolumn]{elsarticle}
+%% \documentclass[final,3p,times]{elsarticle}
+%% \documentclass[final,3p,times,twocolumn]{elsarticle}
+%% \documentclass[final,5p,times]{elsarticle}
+%% \documentclass[final,5p,times,twocolumn]{elsarticle}
 
-\and
+%% For including figures, graphicx.sty has been loaded in
+%% elsarticle.cls. If you prefer to use the old commands
+\usepackage{epsfig}
+\usepackage{longtable}
+\usepackage[ruled,vlined]{algorithm2e}
+\usepackage{subcaption}
+%% The amssymb package provides various useful mathematical symbols
+\usepackage{amssymb}
+%% The amsthm package provides extended theorem environments
+%% \usepackage{amsthm}
 
-\IEEEauthorblockN{Dhairya Gupta}
-\IEEEauthorblockA{dhairya.g2020@vitstudent.ac.in}
-\IEEEauthorblockT{VIT University}
+%% The lineno packages adds line numbers. Start line numbering with
+%% \begin{linenumbers}, end it with \end{linenumbers}. Or switch it on
+%% for the whole article with \linenumbers.
+%% \usepackage{lineno}
 
-\and
-
-\IEEEauthorblockN{Samik Saraswat}
-\IEEEauthorblockA{samik.saraswat2020@vitstudent.ac.in}
-\IEEEauthorblockT{VIT University}
-}
-\date{January 1, 2023}
+\journal{Alexandria Engineering Journal}
 
 \begin{document}
 
-\maketitle
+\begin{frontmatter}
+
+\title{DecentraliDrone: A Decentralized, Fully Autonomous Drone Delivery System for Reliable, Efficient Transport of Goods}
+
+\author[a]{A Sheik Abdullah\corref{cor1}}
+\ead{sheik.abdullah@vit.ac.in}
+
+\author[a]{Abdul Aziz A.B}
+\ead{abdulaziz.ahamed2020@vitstudent.ac.in}
+
+\author[a]{S.Geetha\corref{cor1}}
+\ead{s.geetha@vit.ac.in}
+
+\cortext[cor1]{Corresponding author(s)}
+
+\address[a]{School of Computer Science and Engineering, Vellore Institute of Technology - Chennai Campus, Chennai 600127, Tamil Nadu, India}
+
 
 \begin{abstract}
 As the world becomes more interconnected and globalized, the demand for efficient and reliable delivery systems is on the rise. To meet this demand, we propose DecentraliDrone, an innovative drone delivery system that utilizes advanced technology to transport goods autonomously and efficiently. Our system is fully decentralized, meaning that it operates without the need for human intervention and relies on a distributed network of drones and devices to function. One of the key features of DecentraliDrone is its autonomy. The system operates without the need for human intervention, enabling it to operate 24/7 and reducing the risk of accidents caused by human error. Additionally, our system is highly scalable, allowing it to adapt to changing demands and expand its delivery capabilities.
 There are several challenges that must be addressed in order to fully realize the potential of DecentraliDrone. These include developing robust communication protocols, ensuring the safety and security of the system, and addressing regulatory and legal issues related to autonomous delivery systems.
-The potential applications of DecentraliDrone are numerous and varied, ranging from delivering medical supplies to remote areas to transporting goods between urban centers. By enabling fast, reliable, and autonomous delivery, DecentraliDrone has the potential to revolutionize the way we transport goods and bring us closer to a more interconnected and efficient world.
 
 \end{abstract}\\
 
-\begin{IEEEkeywords}
-Reinforcement Learning, OpenCV, Unreal Engine, Swarm, MetaShape, V-SLAM, Autonomous System, Decentralization
-\end{IEEEkeywords}
+%%Graphical abstract
+\begin{graphicalabstract}
+\includegraphics[width=16cm]{grabs}
+\end{graphicalabstract}
+%%Research highlights
+\begin{highlights}
+\item The system ensures faster, accurate deliveries by eliminating human-operated constraints.
+
+\item Real-time routing optimization enhances delivery efficiency, adapting to changing conditions seamlessly.
+
+\item Utilizes Advanced Algorithms for Real-time Danger Detection and Collaborative Decision-making.
+
+\item The system complies with regulations, integrates safety protocols, and prioritizes energy-efficient, environmentally friendly operations.
+
+\item Hybrid drone system that has a greater flight time by using both fuel as well as electric cells.
+
+\end{highlights}
+
+\begin{keyword}
+%% keywords here, in the form: keyword \sep keyword
+Reinforcement Learning \sep OpenCV \sep Unreal Engine \sep Swarm \sep MetaShape \sep V-SLAM \sep Autonomous System \sep Decentralization
+%% PACS codes here, in the form: \PACS code \sep code
+\PACS 42.30.Va \sep 07.05.Mh 
+%% MSC codes here, in the form: \MSC code \sep code
+%% or \MSC[2008] code \sep code (2000 is the default)
+\MSC 68T05 \sep 68T40 \sep 68T45 \sep 68U20
+\end{keyword}
+
+\end{frontmatter}
 
 \section{Introduction}
 Drone delivery systems have the potential to revolutionize the way we transport goods, offering faster and more efficient delivery options compared to traditional methods. However, most existing drone delivery systems rely on human operators to control the drones and make deliveries, which can limit their efficiency and reliability.
@@ -49,768 +118,1214 @@ One of the key challenges in the development of decentralized autonomous drone d
 
 Another challenge in the development of decentralized autonomous drone delivery systems is integrating them into existing logistics and delivery systems. DecentraliDrone addresses this challenge by utilizing a package management module that tracks the location and status of each package and ensures that they are delivered to the correct destination. The system also utilizes a routing module that calculates the most efficient routes for the drones to take in real-time, ensuring that deliveries are made as efficiently as possible.
 
-There are also potential regulatory and environmental challenges to be considered in the development of decentralized autonomous drone delivery systems. DecentraliDrone addresses these issues by following all relevant regulations and utilizing energy-efficient drones and devices that minimize their environmental impact.
+There are also potential regulatory and environmental challenges to be considered in the development of decentralized autonomous drone delivery systems. DecentraliDrone addresses these issues by following all relevant regulations and utilizing energy-efficient drones and devices that minimize their environmental impact, the decentralized nature of DecentraliDrone allows it to operate in a wide range of environments, including urban, rural, and remote areas. This makes it a versatile delivery solution that can meet the needs of a wide range of users.
 
-In conclusion, DecentraliDrone is a revolutionary drone delivery system that utilizes advanced technology to transport goods efficiently and reliably. The fully autonomous and decentralized nature of the system ensures that it is able to operate without the need for human intervention and can continue to make deliveries even in the event of technical issues. By addressing the key challenges of ensuring the safety and reliability of the drones, integrating them into existing logistics and delivery systems, and addressing potential regulatory and environmental issues DecentraliDrone is well-positioned to revolutionize the way we transport goods. In the future, we envision a world where DecentraliDrone is widely used for a variety of delivery applications, including same-day delivery of packages and groceries, transportation of medical supplies and equipment, and emergency response deliveries.
+We believe this is a promising technology that has the potential to revolutionize the way we transport goods and make a positive impact on society. We look forward to continuing to develop and improve upon this technology in the future.
 
-Furthermore, the decentralized nature of DecentraliDrone allows it to operate in a wide range of environments, including urban, rural, and remote areas. This makes it a versatile delivery solution that can meet the needs of a wide range of users.
+\section{Components of the System}\\
 
-In addition to its practical applications, DecentraliDrone has the potential to have a positive impact on society. By reducing the need for human operators and traditional delivery methods, DecentraliDrone can help to reduce traffic congestion, air pollution, and other environmental issues associated with transportation.
+DecentraliDrones comprises of various essential components, each playing a distinct role in ensuring the successful and efficient delivery of packages. These components are grouped into several key categories, with specific functionalities and tasks assigned to each. The system operates cohesively, combining the efforts of multiple groups to achieve seamless package delivery.
 
-Overall, DecentraliDrone is a promising technology that has the potential to revolutionize the way we transport goods and make a positive impact on society. We look forward to continuing to develop and improve upon this technology in the future.
+\begin{enumerate}
+\item \textbf{Drone Fleet:}
+\begin{itemize}
+  \item \textbf{Drone Operations Group:}
+    \begin{itemize}
+      \item Responsible for managing the entire drone fleet.
+      \item Monitors drone health and coordinates maintenance activities.
+      \item Ensures drones are adequately charged and prepared for deliveries.
+    \end{itemize}
+  \item \textbf{Drone Routing and Scheduling Group:}
+    \begin{itemize}
+      \item Develops optimized delivery routes based on package destinations.
+      \item Schedules delivery times for maximum efficiency.
+      \item Considers factors like weather conditions, traffic, and delivery priorities.
+    \end{itemize}
+\end{itemize}
+
+\item \textbf{Package Handling:}
+\begin{itemize}
+  \item \textbf{Loading and Unloading Group:}
+    \begin{itemize}
+      \item Handles the loading and unloading of packages onto drones.
+      \item Ensures secure attachment and proper balancing.
+      \item Coordinates with the Drone Operations Group for timely departures.
+    \end{itemize}
+  \item \textbf{Package Sorting and Categorization Group:}
+    \begin{itemize}
+      \item Sorts packages based on size, weight, and destination.
+      \item Categorizes packages for efficient loading and route planning.
+      \item Coordinates with the Drone Routing and Scheduling Group for optimized load distribution.
+    \end{itemize}
+\end{itemize}
+
+\item \textbf{Navigation and Safety:}
+\begin{itemize}
+  \item \textbf{Navigation and Guidance Group:}
+    \begin{itemize}
+      \item Develops and maintains navigation algorithms for drones.
+      \item Ensures accurate positioning and obstacle avoidance.
+      \item Collaborates with the Drone Routing and Scheduling Group to follow designated routes.
+    \end{itemize}
+  \item \textbf{Safety and Compliance Group:}
+    \begin{itemize}
+      \item Monitors regulatory compliance and airspace regulations.
+      \item Implements safety protocols to handle emergencies.
+      \item Coordinates with local authorities and air traffic control for airspace access.
+    \end{itemize}
+\end{itemize}
+
+\end{enumerate}\\
+
+These components work together harmoniously to establish a fully functional Drone Delivery System, effectively harnessing the capabilities of autonomous aerial vehicles to transform the delivery industry.
 
 \section{Related Works}
 
-The research on SLAM has predominantly focused on centralized multi-robot systems, which produce precise maps but suffer from limited scalability, adaptability to unforeseen changes in the environment, and vulnerability to failure in hostile settings. Swarm SLAM techniques have emerged as potential solutions to address these issues by enabling the creation of decentralized, scalable, adaptable, and fault-tolerant maps. However, the adoption of swarm SLAM faces significant technological and financial challenges. It is argued that swarm SLAM could be particularly valuable in scenarios with time or cost constraints, as well as in monitoring dynamic environments. The paper discusses potential applications of swarm SLAM and the primary obstacles that need to be overcome. Nonetheless, the successful implementation of swarm SLAM depends on the availability of suitable, distributed data exchange strategies.\cite{li2018review}.
-
-
-
-
-In both research and education, there is an increasing emphasis on v-SLAM and UAV navigation. However, due to safety restrictions, battery limitations, and the complexity of hardware setups, conducting rigorous physical testing can be time-consuming and costly. To address this issue, a customized simulator has been developed that integrates various localization, mapping, and path-planning modules into a single platform. The simulator features an extended Kalman Filter-based state estimator and a motion control module that runs on the PX4 stack, offering click-and-fly autonomy for UAV navigation. While the simulator has proven to be an effective tool for the development of navigation algorithms and autonomous systems, it cannot replicate the simulation in real-life drones due to the complex hardware setup, safety precautions, and battery constraints that would necessitate extensive physical testing.\cite{zhou2018routing}.
-
-
-
-
-The article presents a survey of SLAM and data fusion techniques and critically evaluates current SLAM implementations in robotics and autonomous vehicles, assessing their applicability and scalability to UAVs. The research bridges the gap between SLAM and data fusion in UAVs while also comprehensively surveying related object detection techniques, such as visual odometry and aerial photogrammetry. The paper begins with an introduction to applications where UAV localization is required, followed by a discussion of multimodal sensor data fusion analysis mounted on UAVs. Various SLAM techniques, such as Kalman filters and extended Kalman filters, which are used for scene perception, mapping, and localization in UAVs, are also explored.\cite{wang2018survey}.
-
-The study aims to reduce the impact of errors caused by different sensor resolutions by employing data fusion techniques. The authors suggest that the data fusion process could benefit from machine learning techniques to make it more end-to-end, while Bayesian SLAM could be made more intelligent with the use of deep learning techniques. However, the authors also acknowledge the challenges associated with data fusion, such as uncertain and imprecise data, processing interfaces, noise, and reliability issues.issues\cite{kegeleirs2021swarm}.
-
-
-
-
-The authors propose a novel estimator for simultaneous localization and mapping system to be applied to UAVs, relying on an Extended Kalman Filter. Data fusion is also utilized by combining data from an orientation sensor (AHRS), a position sensor (GPS), and a monocular camera as parameters to the Kalman estimator. The inclusion of camera measurements into the system considerably improves the estimation of the trajectory of the vehicle, compared with using only the measurements from the position sensor. The suggested method is similar to monocular SLAM systems, but a multi-sensor approach is used to address technical issues. The use of a stochastic triangulation methodology to estimate feature depth helps to overcome the problem of metric scale recovery.
-
-The visual data is obtained with an integrated camera in the flying vehicle pointing to the ground.The suggested method is similar to monocular SLAM systems, which employ a single camera to simultaneously estimate a map of visual features and the trajectory of the camera. To get over some of the technical issues with monocular SLAM systems, a multi-sensor approach is used to make use of the collection of sensors that are frequently found in UAVs. The suggested method relies on a stochastic triangulation methodology to estimate feature depth. The fact that the metric scale of the environment can only be recovered with a known factor if no extra information is added into the system presents another significant problem when using monocular vision\cite{chen2022end}.
-
-
-
-
-The paper also describes a SLAM system designed for low-cost commercial aerial platforms with limited onboard computing capacity. The system uses a minimum onboard sensory configuration of a monocular camera, an Inertial Measurement Unit (IMU), and an altimeter to calculate the pose and environment map of the platform. The authors have also addressed the challenge of GPS-denied or GPS-weak environments in this SLAM system. The system uses an Extended Kalman Filter to estimate the platform’s pose and the environment map, which integrates information from the monocular camera, IMU, and altimeter. The use of low-cost sensors is intentional in this SLAM system, as it is designed for low-cost commercial aerial platforms. Using more sophisticated sensors would increase the cost of the system, which would defeat the purpose of developing a low-cost SLAM system.
-
-
-The system uses an Extended Kalman Filter to estimate the platform's pose and the environment map. This filter integrates information from the monocular camera, IMU, and altimeter to estimate the position, orientation, and velocity of the platform, as well as the environment map. The use of an altimeter, in addition to the camera and IMU, helps to improve the accuracy of the estimated altitude, which is crucial for accurate mapping.
-
-It is worth noting that the use of low-cost sensors is intentional in this SLAM system, as it is designed for low-cost commercial aerial platforms. Using more sophisticated sensors would increase the cost of the system, which would defeat the purpose of developing a low-cost SLAM system. Therefore, while using an orientation sensor would improve the system's accuracy, it would also increase the system's cost\cite{gupta2022slam}.
-
-
-
-The paper provides a detailed, experiment driven comparison between decentralized and centralized behaviour in Unmanned Autonomous Vehicles. The authors place the existing claims such as decentralized control in drones performing better in environments with randomized obstacles on the table and investigate these via experimental findings.
-
-They manage to prove that more decentralized control will provide better scalability and disprove the superiority in performance of decentralized drones under randomized obstacles.
-
-The researchers could have increased the generality of the comparisons made by averaging over several other possible tasks rather than being ad hoc comparisons for specific ones\cite{mahdoui2019multiUAV}.
-
-
-
-
-This paper proposes a multi-UAV framework for SLAM-based cooperative exploration under limited communication bandwidth. It uses a RGB-D based grid mapping and group leader decision making with a new utility function that takes into account each robot distance in the group from the unexplored set of targets, allows to simultaneously explore the environment and to get a detailed grid map of specific areas in an optimized manner.
-
-The paper also makes improvements in memory consumption by reducing the shared data volume by exchanging only the frontier points of the computed local grid map. It also presents substantiative gains in average exploration time and distance travelled.
-
-A big shortcoming of the paper though, is the absence of any obstacles in the environment. This is due to the concave shape assumption of the local maps. Important to note here that out project emulates an environment filled with obstacles of several kinds\cite{munguía2016vslam}.
-
-
-
-
-In this paper, researchers propose a decentralized and distributed collaborative SLAM algorithm called  SLAM. This algorithm has high local accuracy and global consistency, and the distributed architecture allows it to scale up.  SLAM covers swarm state estimation in two scenarios: near-field state estimation for high real-time accuracy at close range and far-field state estimation for globally consistent trajectories estimation at the long-range between UAVs.
-
-This method capable of being applied in various scenarios is robust to transient loss of communication and network delays. Experimental results reveal real-time high-precision local localization capability and real-time high-precision relative localization when the UAVs are near each other.
-
-There are quite a few limitations for this paper which include limited swarm scale growth due to communication and front-end computing capabilities. Relative measurements including UWB and visual recognition are not introduced due to SLAM being a more traditional v-SLAM work\cite{lópez2017sensorial}.
-
-
-
-
-This study presents an unique hybrid multirotor drone architecture that stabilises the drone using four electric motors in addition to two petrol engines, which supply the majority of the lift force.
-
-The main advantage of using this propulsion system is that it is aimed at optimising and exploiting their respective pros, such as reduction of the total energy consumption rate and increase in the time of flight. Taking inspiration from this hybrid system we would be incorporating it into our system. A hybrid gas-electric multirotor drone can already fly longer than a fully electric drone, according to simulation and experiment results.
-
-One of the limitations regarding this would include the minor gasoline emissions in the environment. The simulation and the experimental results specified the optimal gas-to-electric thrust ratio, the fuel amount, and the battery capacity in which all the energy reserves were depleted simultaneously. This ratio can differ from one design to another based on the fuel tank size, battery capacity used, motors and engine types, and drone weight\cite{stolaroff2018energy}.
-
-
-
-
-In this paper, a detailed study highlighting the use of automated, unmanned aerial vehicles(drones) to deliver commercial packages and the significantly shifting energy use in the freight sector was done.The study's goal is to demonstrate that drones use less energy per package-kilometer than delivery trucks, accounting for the additional energy needed for the warehouse as well as the greater distances travelled by drones per package greatly increases the life-cycle impact. Shedding light on careful deployment of these drones, would result in significant reduction of greenhouse gas emissions and energy use in the freight sector when it comes to drone-based delivery systems.
-
-The main advantage of drone based delivery system in contrast to conventional ground vehicle delivery systems comes down to the point that batteries and fuel cells in drones are higher energy efficiency than combustion, lower noise, next to none air emissions at the point of use and possible reduced greenhouse gas impacts via low-carbon electricity storage in batteries or hydrogen produced via low-carbon methods.
-
-Limitations of this include the implementation of the entire system and the gradual change from the conventional delivery system to drone-based delivery systems\cite{jarrah2022flight}.
-
-
-
-Loop closure is an essential concept in SLAM systems. It’s the process of detecting a previously visited location in a new observation, which enables the system to correct its map and estimate the robot's position. This process helps to reduce mapping and localization errors and improves the overall accuracy of the system. Loop closure is a crucial step in maintaining consistent maps over long periods and can increase the robustness and reliability of SLAM systems.
-
-Deep neural networks have been applied to various tasks related to loop closure, such as feature extraction, place recognition, and relocalization enabling more accurate and reliable mapping and localization.
-
-The methods include Visual-Based Loop Closure Detection and Lidar Based Loop closure detection and Deep learning-augmented segment-based loop detection method. 
-
-LIDAR sensors fails in changing environment and weather conditions, where vision based loop closure methods are sensitive to illuminations. There is a need of hybrid method which can combine both vision as well as LIDAR for a perfect combination\cite{arshad2021loop}.
-
-
-In the development of large-scale systems, effective cost reduction and flexibility enhancement provide a major path planning and work allocation issue. One of the main technologies for attaining autonomous driving of UAVs is coverage path planning. However, due to its NP-Hard computational complexity, it is challenging to find the best solutions. The coverage path planning issue for autonomous heterogeneous UAVs on a finite number of regions is examined in this research. 
-
-In order to exhaustively search the solution space and generate the best flight paths for autonomous UAVs, an accurate formulation based on mixed integer linear programming using models of separated regions and heterogeneous UAVs is used. 
-
-Then, drawing inspiration from density-based clustering techniques, we develop a novel clustering-based algorithm to group regions into clusters and determine roughly ideal point-to-point UAV flight paths so that coverage tasks can be completed accurately and effectively\cite{chen2022coverage}. 
-
-
-
-
-There has been progress in developing safe path planning for obstacle avoidance in autonomous vehicles.
-
-The technique combines path pruning, smoothing, and optimization with geometric collision detection to increase planning effectiveness. It is based on the RRT algorithm. Route pruning, a necessary step before path smoothing, is done to eliminate the duplicate points produced by the random trees so that a new path can be created that avoids running into the obstacles.
-
-Path smoothing modifies the path to make it continuously differentiable with curvature that the vehicle can apply. A "near"-optimal path with the lowest distance among the possible paths is chosen through optimization to maximize motion efficiency.  Improvements are done to pruning and smoothing & optimization with help of bezier curves
-
-The experiment has been carried out in a static environment where the obstacles are static and not changing but in real-world scenarios, an open-world approach is required and the autonomous bot has to detect obstacles dynamically and non-deterministically\cite{yang2021rrt}.
-
-
-
-
-A robot needs to be able to navigate even in a dynamic environment with potential obstacles and does always not have any prior information about its environment. The only way to make robots able to navigate is to represent the environment in some form. Generating a 3D map online appears to be the starting point for a complete autonomous navigation in a 3D world. hybridized solutions offer improvements in the performance of SLAM, especially with respect to aggressive motion, lack of light, or lack of visual features
-
-Visual sensors had been the main research direction for SLAM solutions because they are inexpensive, capable of collecting a large amount of information, and offer a large measurement range. They are of 2 types: feature based v-SLAM, Direct-SLAM, RGB-D SLAM, Event-Camera SLAM, Visual SLAM.
-
-They explained about Visual-Lidar SLAM, which consists of EFK Hybridized SLAM and improved Visual SLAM. Among all the ways of implementing such a SLAM, the hybridized framework is the least studied. Creating a common SLAM framework using visual information and laser range seems to be a real challenge. A more tightly coupled LiDAR-vision sensor fusion algorithm is not fully investigated in the literature yet and should be studied\cite{debeunne2020vlidar}.
-
-
-
-
-Choosing an appropriate path planning algorithm helps to ensure safe and effective point-to-point navigation, and the optimal algorithm depends on the robot geometry as well as the computing constraints, including static/holonomic and dynamic / non-holonomically constrained systems, and requires a comprehensive understanding of contemporary solutions. The goal of this paper is to help novice practitioners gain an awareness of the classes of path planning algorithms used today and to understand their potential use cases—particularly within automated or unmanned systems.
-
-Possible Algorithms: Dijkstra (normal, improved, multi-layed, Floyd), A* algorithm (hierarchical, improved, Hybrid, Guided Hybrid, with smart heuristics, lifelong, with equal step sampling, diagnoal), Dynamic A* (D*) (normal, lite, enhanced, field), RRT* (connect, sensor based, RRT*), Genetic algorithms, Ant Colony Algorithms, slime mold based optimization, Improved ant colony optimization, Adaptive ant colony, Enhanced Ant Colony Algorithm, Bidirectional ant colony and firefly algorithms\cite{karur2021path}.
-
-
-
-
-Swarm intelligence has received much research attention in recent years. As a typical application of swarm intelligence, swarm of drones systems generally exhibit decentralized control achieved through simple agent behaviors and interactions developing a self-organization that is considered an emergence of order from the system. 
-
-Much of the work conducted in the Mobile Ad Hoc Networks (MANETs) and Vehicular Ad Hoc Networks (VANETs) field does not approach the unique features of the swarm networks. Swarm networks may change from slow dynamic to dynamic; have intermittent connections and fluid configuration. While it is thought that ad hoc mesh network would be most appropriate for swarm networks. Such networks are low cost cooperative solution for wireless connectivity. While routing, it should have self healing capabilities in case nodes breakdown.
-
-Instead of routing, a flood technique can be used as it is simplistic and reliable but can use more power even when such a resource is limited as well as avoiding ‘broadcast storms’. 
-
-Factors such as energy consumption, range and latency should be taken into consideration when using the ad hoc communication strategies\cite{cui2017brief}.
-
-
-
-
-Swarm intelligence (SI) is concerned with the collective behaviour that emerges from decentralised self-organising systems, whilst swarm robotics (SR) is an approach to the self-coordination of large numbers of simple robots which emerged as the application of SI to multi-robot systems. 
-
-An efficient physics- based model of fire propagation and a self-organisation algorithm for swarms of firefighting drones are developed and coupled, with the collaborative behaviour based on a particle swarm algorithm adapted to individuals operating within physical dynamic environments of high severity and frequency of change.
-
-They use Particle Swarm Algorithms (PSO’s) to achieve these tasks, taking into considerations: the trajectory difference equation, neighbourhood structure, dynamic structure of the mesh, etc\cite{innocente2019self}.
-
-
-
-
-This paper introduces a novel dynamic optimization problem applied to Unmanned Aerial Vehicle (UAV) search and rescue scenarios, named the Moving Peak Drone Search Problem (MPDSP). It utilizes the dynamic environment generator of the well-known Moving Peak Benchmark (MPB) and it is formulated as a maximization problem, with additional constraints imposed by the use of UAVs. 
-
-
-Coverage based Path planning algorithms proposed which can be further classified into memory based, prediction method based, self-adaptive methods and multi-population methods. Doing dynamic optimization using a fleet of UAVs for searching a  large area is desired\cite{kyriakakis2021moving}.
-
-
-\section{Proposed Methodology}
-
-\graphicspath{ {./images/} }
-\includegraphics[width=8.5cm, height=5.75cm]{td3_algo.png}\\
-\caption{Figure 3.1: Proposed Methodology Network}\\\\
-\\\
+The research on Simultaneous Localization and Mapping (SLAM) has primarily concentrated on centralized multi-robot systems, which yield precise maps but exhibit constraints in scalability, adaptability to environmental changes, and resilience in hostile conditions. In response, Swarm SLAM has emerged as a promising solution, facilitating the creation of decentralized, scalable, adaptable, and fault-tolerant maps. While Swarm SLAM holds great potential, its adoption faces significant technological and financial challenges, yet it proves valuable in scenarios with time or cost constraints and in dynamic environment monitoring. This paper explores potential applications of Swarm SLAM and the associated obstacles, emphasizing the need for suitable, distributed data exchange strategies\cite{li2018review}.
+
+In both research and education, there is a growing focus on visual-SLAM (v-SLAM) and Unmanned Aerial Vehicle (UAV) navigation. However, physical testing poses challenges due to safety restrictions, battery limitations, and complex hardware setups. To address these constraints, custom simulators have been developed that incorporate localization, mapping, and path-planning modules, providing effective platforms for the development of navigation algorithms and autonomous systems\cite{zhou2018routing}.
+
+Further, a comprehensive survey bridges SLAM and data fusion in UAVs, with a focus on multi-sensor fusion. The authors discuss various SLAM techniques, such as Kalman filters, extended Kalman filters, and their role in UAV scene perception, mapping, and localization\cite{wang2018survey}. Data fusion stands as a crucial aspect of SLAM, although it encounters challenges such as uncertain data, noise, and reliability\cite{kegeleirs2021swarm}.
+
+A novel estimation method is proposed for UAVs, employing an Extended Kalman Filter and data fusion from multiple sensors, including a monocular camera. This method enhances trajectory estimation and overcomes issues in metric scale recovery. The integration of visual data from a downward-facing camera enhances its capabilities\cite{chen2022end}.\\ Additionally, a SLAM system designed for low-cost commercial aerial platforms with limited onboard computing capacity is introduced. It combines data from a monocular camera, Inertial Measurement Unit (IMU), and altimeter to calculate the platform's pose and environment map. Designed for low-cost aerial platforms, this SLAM system makes intentional use of low-cost sensors\cite{gupta2022slam}.
+
+In the domain of multi-UAV systems, a framework for cooperative SLAM-based exploration with limited communication bandwidth is proposed. The RGB-D based grid mapping system enhances exploration by optimizing the flight paths of multiple UAVs and reducing memory consumption by sharing only the necessary data\cite{munguía2016vslam}. The decentralization of SLAM is a significant focus, leading to the development of the SLAM algorithm. It demonstrates high-precision local localization capability and real-time high-precision relative localization when UAVs are in proximity\cite{lópez2017sensorial}.\\
+An innovative hybrid multirotor drone architecture that employs gasoline engines in addition to electric motors for propulsion is presented. This hybrid system offers longer flight times and reduced energy consumption, benefiting various applications such as package delivery\cite{stolaroff2018energy}. The transition to drone-based delivery systems has the potential to reduce greenhouse gas emissions in the freight sector. Drone delivery systems demonstrate advantages over traditional ground vehicle delivery methods, with higher energy efficiency and lower emissions\cite{jarrah2022flight}.
+Loop closure detection in SLAM systems is an essential process to improve mapping and localization accuracy. Deep learning-based techniques have been applied for loop closure detection in both visual and LiDAR SLAM, presenting a promising direction for improving SLAM systems\cite{arshad2021loop}. An advanced path planning method for autonomous heterogeneous UAVs is explored, which is essential for efficient coverage in various scenarios. The use of mixed-integer linear programming and clustering-based algorithms optimizes the flight paths of UAVs for accurate and effective coverage\cite{chen2022coverage}.\\
+Path planning and obstacle avoidance are critical for autonomous vehicles. The research introduces a technique that combines path pruning, smoothing, and optimization, along with geometric collision detection. While the experiments are conducted in static environments, real-world scenarios may require dynamic obstacle detection\cite{yang2021rrt}. SLAM solutions have evolved towards incorporating both visual and LiDAR data for improved performance. However, more research is needed to develop tightly coupled LiDAR-vision sensor fusion algorithms\cite{debeunne2020vlidar}. Path planning is crucial for autonomous navigation. This paper offers an overview of various path planning algorithms for different types of robotic systems, serving as a valuable resource for those looking to implement autonomous navigation\cite{karur2021path}.\\
+Swarm intelligence has gained attention, particularly in swarm robotics and drone systems. Communication strategies are critical, taking into account factors such as energy consumption, range, and latency for ad hoc mesh networks, especially when used in swarm networks\cite{cui2017brief}.\\ Swarm robotics presents challenges and opportunities in fire-fighting scenarios. The research focuses on the self-organization of swarms of firefighting drones, utilizing Particle Swarm Algorithms for improved performance in dynamic environments\cite{innocente2019self}. The paper introduces a dynamic optimization problem related to Unmanned Aerial Vehicle (UAV) search and rescue scenarios, known as the Moving Peak Drone Search Problem (MPDSP). A solution is proposed to maximize the effectiveness of a UAV fleet searching a large area\cite{kyriakakis2021moving}. A decentralized omnidirectional visual-inertial-UWB state estimation for aerial swarms, offers insights into robust swarm navigation and state estimation\cite{xu2022omni}.\\
+
+\section{Schematics of the Proposed System}\\
+
+In the context of the system, we have two primary end users, each with distinct roles and responsibilities. 
+
+\subsection{Customer Perspective:}
+\begin{enumerate}
+\item Place an order within the mobile app.
+\item Acquire and place a unique ArUco marker code.
+\item Request autonomous delivery.
+\item Verify and accept the delivery upon marker recognition.
+\end{enumerate}
+
+\subsection{Recipient Perspective:}
+\begin{enumerate}
+\item Prepare to receive a drone delivery.
+\item Place the ArUco marker on a suitable surface.
+\item Verify and accept the delivery upon marker recognition.
+\item If needed, respond to incomplete delivery alerts for resolution.
+\end{enumerate}
+
+\begin{figure}[!htbp]
+    \centering
+    \includegraphics[width=9cm, height=7cm]{images/td3_algo.png}
+    \caption{DecentraliDrones Methodology Network}
+\end{figure}\\
 For the Critic network, the loss function is expressed as:
 \begin{equation}
 \label{eq:first}
-J(\theta_i) = N^{-1}\sum(y - Q_{\theta_i}(S,a))^2\\
+J(\theta_i) = N^{-1}\sum(y - Q_{\theta_i}(S,a))^2
 \end{equation}
+
+where:\\
+\begin{align*}
+&J(\theta_i) \text{ - Critic loss.} \\
+&N \text{ - Batch size.} \\
+&y \text{ - Target value.} \\
+&Q_{\theta_i}(S,a) \text{ - Estimated Q-value.} \\
+\end{align*}
 
 For actor networks, a deterministic strategy is used to optimize the parameters, and the loss function is expressed as:
 \begin{equation}
 \label{eq:second}
 {\nabla_\phi}{J(\phi)}=N^{-1}\sum\nabla_{a}Q_{\theta_i}(s,a)|_{a=\Pi_{\phi(s)}}\nabla_{\phi}\Phi_\phi(s)
-\end{equation}\\
+\end{equation}
+
+where:\\
+\begin{align*}
+&\nabla_\phi J(\phi) \text{ - Actor loss gradient.} \\
+&N \text{ - Batch size.} \\
+&Q_{\theta_i}(s,a) \text{ - Estimated Q-value.} \\
+&\Pi_\phi(s) \text{ - Deterministic policy.} \\
+&\nabla_\phi\Phi_\phi(s) \text{ - Policy gradient.} \\
+\end{align*}
+
 
 
 Time and Space Complexity Associated with TD3-
 The time and space complexity of the TD3 algorithm depend on several factors such as the size of the state and action spaces, the number of layers and neurons in the neural networks, the batch size used for updates, and the length of the training process. 
-Overall, the time and space complexity of the TD3 algorithm depend heavily on the size of the neural networks and the batch size used for updates. As these can be adjusted based on the available computational resources, it is difficult to give a general estimate of the complexity of the algorithm. However, it is safe to say that TD3 can be computationally expensive to train, especially for large state and action spaces.
-
+Overall, the time and space complexity of the TD3 algorithm depend heavily on the size of the neural networks and the batch size used for updates. As these can be adjusted based on the available computational resources, it is difficult to give a general estimate of the complexity of the algorithm. However, it is safe to say that TD3 can be computationally expensive to train, especially for large state and action spaces. \\
 
 \subsection{Basic Architecture Flowchart}\\
 
-\graphicspath{ {./images/} }
-\includegraphics[width=8.5cm, height=8cm]{architecture_new.png}\\
-\caption{Figure 3.2: Architecture Flowchart}\\\\
-\\
-\caption{The customer will raise the request for the purchase and delivery of a specific item through the app interface. The app interface consists of Destination details of the customer, progress updates of the delivery and the payload specifications, i.e., the order details in terms of weight, dimensions and other attributes. The delivery recipient will acquire a unique ArUco marker code mapped to the unique delivery. The recipient has to find a suitable flat surface and place the marker code at the respective position after printing it. Each unique delivery will be mapped to a pair of drones within the drone swarm. The delivery vicinity details will be given as input to the drone unit for the implementation of autonomous delivery. With the help of Path planning algorithms such as TD3 the drone unit will navigate towards the destination vicinity autonomously. These algorithms will ensure the obstacle avoidance, course correction and smooth and effective path planning for reaching the destination. A pair of drone will be assigned to each delivery to ensure smoothness in the delivery as 1 drone will carry the payload and implement V-SLAM while other drone will be giving visual aide and extending the vision of the first drone. This data helps in course correction and precise and accurate navigation to the destination vicinity. Once the drone unit reaches the destination vicinity. After reaching the destination vicinity, the drone unit pair would lower the altitude and start searching for the ArUco marker in the compound using openCV component. If the marker is found and matched by the drone unit, then the drone unit would complete the delivery. After completing the delivery, it would update in the app interface and the logger about the progress and return back to drone dispatch spawn unit. In case the marker is not found or found in an unsuitable environment for completing the delivery, the drone unit would raise a request/alert in the app interface. The recipient will have to respond within a time limit and fix the placement of ArUco, if these conditions are met then the raised request is accepted and the drone unit can proceed with the delivery procedure. If the recipient fails to respond to the request within the specific timeframe, the drone unit would return back to the drone dispatch spawn unit and log that scenario as an incomplete delivery/failure. }
+\begin{figure}[!htbp]
+    \centering
+    \includegraphics[width=8.5cm, height=8cm]{images/architecture_new.png}
+    \caption{Architecture Flowchart}
+\end{figure}
 
+The customer will raise the request for the purchase and delivery of a specific item through the app interface. The app interface consists of Destination details of the customer, progress updates of the delivery and the payload specifications, i.e., the order details in terms of weight, dimensions and other attributes. The delivery recipient will acquire a unique ArUco marker code mapped to the unique delivery. The recipient has to find a suitable flat surface and place the marker code at the respective position after printing it. Each unique delivery will be mapped to a pair of drones within the drone swarm. The delivery vicinity details will be given as input to the drone unit for the implementation of autonomous delivery.\\
+With the help of Path planning algorithms such as TD3 the drone unit will navigate towards the destination vicinity autonomously. These algorithms will ensure the obstacle avoidance, course correction and smooth and effective path planning for reaching the destination. A pair of drone will be assigned to each delivery to ensure smoothness in the delivery as 1 drone will carry the payload and implement V-SLAM while other drone will be giving visual aide and extending the vision of the first drone. This data helps in course correction and precise and accurate navigation to the destination vicinity. Once the drone unit reaches the destination vicinity. After reaching the destination vicinity, the drone unit pair would lower the altitude and start searching for the ArUco marker in the compound using openCV component. If the marker is found and matched by the drone unit, then the drone unit would complete the delivery. After completing the delivery, it would update in the app interface and the logger about the progress and return back to drone dispatch spawn unit. \\
+In case the marker is not found or found in an unsuitable environment for completing the delivery, the drone unit would raise a request/alert in the app interface. The recipient will have to respond within a time limit and fix the placement of ArUco, if these conditions are met then the raised request is accepted and the drone unit can proceed with the delivery procedure. If the recipient fails to respond to the request within the specific time-frame, the drone unit would return back to the drone dispatch spawn unit and log that scenario as an incomplete delivery.
 
-\subsection{Swarm Schematics}\\
-\graphicspath{ {./images/} }
-\includegraphics[width=8.5cm, height=10cm]{Decentralized_Structure.png}\\
-\caption{Figure 3.3: Decentralized Swarm Structure of Drone Network}\\\\
-\caption{ This schematic explains the basic workings behind the communications involved among the swarm of drones that are deployed, being a decentralised system, they check in on each other for the delivery states and carry out the delivery screening process where they travel around the delivery point and drop the packages where and when required. The drones also keep track of the individual check ins so that when one of the drones faults to an unfortunate circumstance, the system balances itself by sending in a replacement by peer communication via the group check in feature.
-}\\
+\subsection{Swarm Schematics}
+\begin{figure}[!htbp]
+    \centering
+    \includegraphics[width=8.5cm, height=9cm]{images/Decentralized_Structure.png}
+    \caption{Decentralized Swarm Structure of Drone Network}
+\end{figure}
 
-\subsection{Communication Schematics}\\
+This schematic explains the basic workings behind the communications involved among the swarm of drones that are deployed, being a decentralised system, they check in on each other for the delivery states and carry out the delivery screening process where they travel around the delivery point and drop the packages where and when required. The drones also keep track of the individual check ins so that when one of the drones faults to an unfortunate circumstance, the system balances itself by sending in a replacement by peer communication via the group check in feature.\\
 
-\graphicspath{ {./images/} }
-\includegraphics[width=8cm, height=12cm]{communication_schematics.png}\\
-\caption{Figure 3.4: Drone Activity Diagram}\\\\
-\caption{ The following diagram gives a sharp overview of the communication that occurs among the drones to make successful deliveries, being in a decentralised system, the drones are their own controller entity as a whole system, the success of the system is considered as a group effort rather than a singular entity’s success, keeping this in mind, the drones communicate with each other to make sure that the deliveries are made. The communication is done through cellular towers present across the region where the drones are deployed for delivering the goods.
-}\\
+\begin{figure}[!htbp]
+    \centering
+    \includegraphics[width=8cm, height=8cm]{images/communication_schematics.png}
+    \caption{Drone Activity Diagram}
+\end{figure}
+
+The following diagram gives a sharp overview of the communication that occurs among the drones to make successful deliveries, being in a decentralised system, the drones are their own controller entity as a whole system, the success of the system is considered as a group effort rather than a singular entity’s success, keeping this in mind, the drones communicate with each other to make sure that the deliveries are made. The communication is done through cellular towers present across the region where the drones are deployed for delivering the goods.\\
 
 \subsection{Functional Quad-rotor Schematics}\\
 
-\graphicspath{ {./images/} }
-\includegraphics[width=8.5cm, height=6.5cm]{quad-rotor_schematics.png}\\
-\caption{Figure 3.5: Single Drone Schematic Diagram}\\\\
-\caption{ The following diagram explains the functioning of a singular entity from the system of swarm. Each quad-rotor entity has its own guidance system that is line of sight based, acting upon which the motors and propellers are instructed to take the ascend or descend of the drone, it uses computer vision algorithms to perform obstacle detection and avoidance, the guidance system gives the appropriate trajectory for the drone to take in order to make a successful delivery happen in accordance to the environmental factors that are laid upon in its path. The Guidance system takes the inputs from the navigation system and performs the appropriate logical decisions to map out the path for the drone.
-}\\
+\begin{figure}[!htbp]
+    \centering
+    \includegraphics[width=8.5cm, height=6.5cm]{images/quad-rotor_schematics.png}
+    \caption{Single Drone Schematic Diagram}
+\end{figure}
+
+The following diagram explains the functioning of a singular entity from the system of swarm. Each quad-rotor entity has its own guidance system that is line of sight based, acting upon which the motors and propellers are instructed to take the ascend or descend of the drone, it uses computer vision algorithms to perform obstacle detection and avoidance, the guidance system gives the appropriate trajectory for the drone to take in order to make a successful delivery happen in accordance to the environmental factors that are laid upon in its path. The Guidance system takes the inputs from the navigation system and performs the appropriate logical decisions to map out the path for the drone.\\
 
 \subsection{Takeoff and Landing for VTOL Schematics}\\
+The illustrated diagram provides a comprehensive depiction of the intricate takeoff and landing sequence of the drone. Notably, the drone is strategically designed to land precisely on specified markers during each delivery. This precision landing mechanism is a fundamental component of the overall system, ensuring that the drone consistently lands and takes off at predetermined locations.
 
-\graphicspath{ {./images/} }
-\includegraphics[width=9.0cm, height=6.5cm]{takeoff_landing.png}\\
-\caption{Figure 3.6: Takeoff and Landing pre-flight schematics for single drone}\\\\
-\caption{ The following diagram explains the take off and landing sequence of the drone, since the drone is said to land on specific markers per delivery, a system of precision landing is brought into play, this is used to successfully land the drone at the spot and take off after the delivery, the system is an implication of a VTOL based system which uses the appropriate altitude and position control. Fall detection systems are also implemented to alert the others in the swarm for a due maintenance for the drone and the incomplete delivery, which may or may not be taken in charge by the other drones in the vicinity.  
-}\\
+The underlying technology facilitating this process is a Vertical Takeoff and Landing (VTOL) system, which incorporates sophisticated altitude and position control. This system plays a pivotal role in orchestrating the drone's movements, allowing it to navigate with precision and accuracy during both takeoff and landing phases.
+
+To further enhance operational efficiency and safety, the drone is equipped with fall detection systems. These systems serve a crucial function by promptly detecting any instances of unplanned descents or falls. In the event of such incidents, the fall detection systems generate alerts, notifying other drones within the swarm. These alerts serve a dual purpose – not only do they signal the need for immediate maintenance for the affected drone, but they also communicate the status of an incomplete delivery. Subsequently, neighboring drones in the vicinity can make informed decisions about whether to take charge of the pending delivery or provide support for maintenance activities.
+
+This integrated approach to precision landing and fall detection underscores the advanced capabilities of the drone system, emphasizing its commitment to operational reliability, safety, and collaborative decision-making within the drone swarm.
+
+\begin{figure}[!htbp]
+    \centering
+    \includegraphics[width=7.0cm, height=5.5cm]{images/takeoff_landing.png}
+    \caption{Takeoff and Landing Pre-flight Schematics for Single Drone}
+\end{figure}
+
+
+
+\begin{table}[htbp]
+  \centering
+  \caption{Multicopter Specifications}
+  \begin{tabular}{lcccc}
+    \toprule
+    Model & Airframe Mass (kg) & Total (kg) & Flight Time (min) & Takeoff (kg) \\
+    \midrule
+    DJI Matrice 600 & 5.96 & 9.5 & 32 & 15.1 \\
+    DJI M200 & 2.76 & 3.80 & 27 & 6.1 \\
+    Kitty Hawk & 4.08 & 9.15 & 30 & 18.6 \\
+    \bottomrule
+  \end{tabular}
+\end{table}\\
+
+\begin{table}[htbp]
+  \centering
+  \caption{HES Aerostak Fuel Cell Specifications}
+  \begin{tabular}{lccccc}
+    \toprule
+    Power (W) & Mass (kg) & L/min & Pressure (bar) & Equivalent Volume (L) & Time (s) \\
+    \midrule
+    200 & 2.06 & 2.8 & 0.5 & 1200 & 25714 \\
+    500 & 2.90 & 6.5 & 0.5 & 1200 & 11077 \\
+    1000 & 3.75 & 14 & 0.55 & 1091 & 4675 \\
+    \bottomrule
+  \end{tabular}
+\end{table}\\
+
+
+The energy efficiency of a drone can be calculated as the ratio of useful work (such as lifting a payload or performing a task) to the energy input (typically from the battery):
+\begin{equation}
+\text{Energy Efficiency (\%)} = \frac{\text{Useful Work}}{\text{Energy Input}} \times 100
+\end{equation}
+
+The flight time of a drone can be estimated using the following equation:
+\begin{equation}
+\text{Flight Time (minutes)} = \frac{\text{Battery Capacity (Wh)}}{\text{Power Consumption (W)}}
+\end{equation}
+Where:
+Battery Capacity (Wh) is the capacity of the drone's battery in watt-hours.
+Power Consumption (W) is the average power consumption of the drone during flight.
+It's important to note that power consumption varies based on factors such as drone weight, motor efficiency, aerodynamics, and flight conditions.
+
+The endurance of a drone refers to how long it can stay in the air under specific conditions. It can be calculated using a similar equation to flight time:
+\begin{equation}
+\text{Endurance (minutes)} = \frac{\text{Battery Capacity (Wh)}}{\text{Power Consumption (W)}}
+\end{equation}
+The endurance equation is particularly useful when optimizing drones for specific missions or tasks where extended flight time is essential.
+
+The energy consumption rate of a drone can be expressed as:
+\begin{equation}
+\text{Consumption Rate (Wh/min)} = \frac{\text{Battery Capacity (Wh)}}{\text{Flight Time (min)}}
+\end{equation}
+This equation helps you understand how quickly a drone consumes its battery energy during flight.
+
+Table 2  underscores the fuel cell's efficiency by revealing its ability to deliver significant power output (200 W to 1000 W) while consuming relatively small amounts of hydrogen (2.8 L/min to 14 L/min). These specifications demonstrate its suitability for applications where both power and fuel efficiency are crucial, making it an environmentally friendly and cost-effective choice for energy generation.
 
 \subsection{App Schematics}\\
 
-\graphicspath{ {./images/} }
-\includegraphics[width=9.5cm, height=7.5cm]{app_schematics.png}\\
-\caption{Figure 3.7: Drone Delivery Application Schematics}\\\\
-This diagram explains the workings that are underlying in the application that is developed specifically for this system to be achieved, it explains the confirmation of the buyer to whom the goods are delivered and the unique ArUco markers that are generated for each deliveries, the items involved in the delivery, the locations to be delivered and so on.\\
+\begin{figure}[!htbp]
+    \vspace{-2.5cm}
+    \centering
+    \includegraphics[width=7.0cm, height=5.5cm]{images/app_schematics.png}
+    \caption{Drone Delivery Application Schematics}
+\end{figure}
 
-\section{CAD model of the Hybrid drone}\\
+This diagram explains the workings that are underlying in the application that is developed specifically for this system to be achieved, it explains the confirmation of the buyer to whom the goods are delivered and the unique ArUco markers that are generated for each deliveries, the items involved in the delivery, the locations to be delivered and so on.
+\section{CAD Model of the Hybrid Drone}
+
+In this section, we delve into the CAD model of the Hybrid drone, providing insights into its design, components, and specifications.
+
+\subsection{CAD Model Description}
 
 \begin{enumerate}
-    \item Drone is in the Quad(X) Configuration.\\
+    \item \textbf{Drone Configuration:} The hybrid drone is designed in the Quad(X) Configuration, which provides stability and maneuverability.
+
+    \begin{figure}[!htbp]
+    \centering
+    \includegraphics[width=8cm, height=4cm]{images/X_config.png}
+    \caption{Drone in X Config}
+    \end{figure}
+
+    \item \textbf{Hybrid Power-Based Design:} The drone features a hybrid power-based design, combining four electric motors with two petrol engines to optimize energy consumption and flight time.
+
+    \begin{figure}[!htbp]
+    \vspace{-3.5cm}
+    \centering
+    \includegraphics[width=8cm, height=4cm]{images/config2.png}
+    \caption{Hybrid Model}
+    \end{figure}
+
+    \item \textbf{Protective Dome:} A synthetic dome covers the brain of the drone, housing sensitive sensors, flight controllers, and microcontrollers. It safeguards critical components.
+
+    \begin{figure}[!htbp]
+    \centering
+    \includegraphics[width=6cm, height=3cm]{images/dome.png}
+    \caption{Protective Dome of Drone}
+    \end{figure}
+
+    \item \textbf{Hybrid Power Source:} The drone is equipped with a fuel tank serving as a hybrid power source, ensuring extended flight duration.\\
+
+    \begin{figure}[!htbp]
+    \centering
+    \vspace{-7mm}
+    \includegraphics[width=8cm, height=4cm]{images/fuel_tank.png}
+    \caption{Side View of Fuel Tank}
+    \end{figure}
     
-    \graphicspath{ {./images/} }
-    \includegraphics[width=8cm, height=4cm]{X_config.png}\\
-    \caption{Figure 4.1: Drone in X Config}\\
+    \begin{figure}[!htbp]
+    \centering
+    \vspace{-1cm}
+    \includegraphics[width=8cm, height=4cm]{images/fuel_tank2.png}
+    \caption{Bottom View of Fuel Tank}
+    \end{figure}
 
-    \item This is the orientation showing a hybrid power based drone CAD model. \\
+    \item \textbf{Manipulator Component:} The drone is equipped with tentacular manipulators designed to handle associated payloads effectively.
 
-    \graphicspath{ {./images/} }
-    \includegraphics[width=8cm, height=4cm]{config2.png}\\
-    \caption{Figure 4.2: Hybrid Model}\\
+    \begin{figure}[!htbp]
+    \centering
 
-    \item Synthetic Dome covering the brain of the drone (sensitive sensors, flight controller and the microcontroller/microcomputer integrated on top).\\
-
-    \graphicspath{ {./images/} }
-    \includegraphics[width=8cm, height=4cm]{dome.png}\\
-    \caption{Figure 4.3: Protective Dome of Drone}\\
-    
-    \item Orientations showing fuel tank as hybrid power source of drone.\\
-
-    \graphicspath{ {./images/} }
-    \includegraphics[width=8cm, height=4cm]{fuel_tank.png}\\
-    \caption{Figure 4.4: \textit{Side View}}\\\\
-
-
-    \graphicspath{ {./images/} }
-    \includegraphics[width=8cm, height=4cm]{fuel_tank2.png}\\
-    \caption{Figure 4.5: \textit{Bottom View}}\\\\
-
-    \item The robotic manipulator based component integrated to handle the associated payload.\\
-
-    \graphicspath{ {./images/} }
-    \includegraphics[width=8cm, height=4cm]{manipulator.png}\\
-    \caption{Figure 4.6: Drone tentacular manipulators}\\
-    
-    
+    \includegraphics[width=8cm, height=4cm]{images/manipulator.png}
+    \caption{Drone Tentacular Manipulators}
+    \end{figure}
 \end{enumerate}
 
+\subsection{Proposed Framework and Architecture}
+The drone's architecture follows a decentralized approach, enabling it to work autonomously and collaboratively within a swarm. The framework incorporates various communication protocols, algorithms for path planning, and optimization techniques.
+
+\subsubsection{Protocols}
+Communication among the drone swarm is facilitated through custom protocols designed to ensure seamless coordination.
+
+\subsubsection{Path Planning and Optimization Algorithms}
+The drone employs sophisticated path planning algorithms, such as TD3, for obstacle avoidance, course correction, and efficient navigation. Optimization algorithms are integrated to enhance energy efficiency and route selection.
+
+\subsection{Computer Vision-Based Components}
+The drone leverages computer vision algorithms for tasks like object detection, marker recognition, and visual navigation. This includes Visual SLAM and other relevant techniques.
+
+\subsection{CAD Design and Specifications}
+The CAD design incorporates specific dimensions, materials, and structural details. Specifications include payload capacity, flight range, and more.
 
 
-\section{Result Comparison of Existing and Proposed System}
+\begin{table}[!htbp]
+\centering
+\caption{Specifications and Values}
+\begin{tabular}{|l|l|}
+\hline
+Specification       & Value             \\
+\hline
+Payload Capacity    & 20 kg             \\
+Flight Range        & 200 km            \\
+Battery Capacity    & 25,000 mAh        \\
+Maximum Speed       & 100 km/h          \\
+Fuel Tank Capacity   & 10 liters         \\
+\hline
+\end{tabular}
+\end{table}
+
+\subsection{Formulas and Equations}
+
+\begin{equation}
+\text{Energy Consumption} = \frac{\text{Fuel Consumed}}{\text{Flight Distance}}
+\end{equation}
+For calculating the energy consumption of the hybrid drone by dividing the amount of fuel consumed by the distance traveled during the flight.
+
+\begin{equation}
+\text{Optimization Objective} = \sum_{i=1}^{n} C_i x_i
+\end{equation}
+To represent an optimization objective where \(\sum_{i=1}^{n}\) indicates the sum of all \(n\) optimization factors (e.g., energy efficiency, path length) weighted by their respective coefficients \(C_i\).
+
+\begin{equation}
+\text{Path Length} = \int_{t_0}^{t_1} \sqrt{(dx/dt)^2 + (dy/dt)^2} dt
+\end{equation}
+Was used to compute the path length during a drone's flight by integrating the Euclidean distance over time, where \(dx/dt\) and \(dy/dt\) are the rate of change of the drone's position in the x and y directions.
+
+\begin{equation}
+\text{Marker Recognition Accuracy} = \frac{\text{Correct Matches}}{\text{Total Matches}}
+\end{equation}
+For measuring the marker recognition accuracy, which is the ratio of correctly recognized markers to the total number of matched markers.
+
+\begin{equation}
+\text{Fuel Efficiency} = \frac{\text{Flight Distance}}{\text{Fuel Consumed}}
+\end{equation}
+The formula calculates the fuel efficiency of the drone by dividing the flight distance by the amount of fuel consumed.
+
+\begin{equation}
+\text{Time to Destination} = \frac{\text{Distance}}{\text{Speed}}
+\end{equation}
+Computes the estimated time required to reach the destination based on the distance to be covered and the drone's speed.
+
+\begin{equation}
+\text{Takeoff Thrust} = \text{Weight} + \text{Lift Force}
+\end{equation}
+Takeoff thrust is determined by adding the weight of the drone to the required lift force to overcome gravity.
+
+\begin{equation}
+\text{Landing Approach Angle} = \tan^{-1}\left(\frac{\text{Vertical Descent Rate}}{\text{Horizontal Approach Speed}}\right)
+\end{equation}
+Calculates the landing approach angle, which is the angle at which the drone descends during the landing phase.
+
+\begin{equation}
+\text{Aerodynamic Lift} = \frac{1}{2} \times \text{Air Density} \times \text{Aerodynamic Coefficient} \times \text{Wing Area} \times \text{Velocity}^2
+\end{equation}
+The aerodynamic lift force acting on the drone's wings, considering factors such as air density, aerodynamic coefficient, wing area, and velocity.
+
+\begin{equation}
+\text{Drag Force} = \frac{1}{2} \times \text{Air Density} \times \text{Drag Coefficient} \times \text{Frontal Area} \times \text{Velocity}^2
+\end{equation}
+The drag force experienced by the drone, considering air density, drag coefficient, frontal area, and velocity.
+
+
+
+
+\section{Result Comparison of Existing and Our System}
 \textit{A Brief Overview of Parameters}\\
 
 
-\textbf{Best Y}\\
-
+\subsubsection{Best Y}\\
 The \textit{"best Y vs episode" }graph shows the maximum reward achieved by the agent in each episode during training. The graph is useful for evaluating the overall performance of the agent during training. The graph shows a steady increase in the maximum reward achieved over the course of training, indicating that the agent is improving its performance.\\
 
 In the early episodes of training, the maximum reward achieved may be low but as it progresses, the maximum reward achieved should increase as the agent becomes more skilled at selecting actions that lead to higher rewards.
 The shape of the graph can vary depending on the specific environment and hyperparameters used for training. However, in general, it should show a positive trend over time. If the graph shows a plateau or a decline in the maximum reward achieved, it may indicate a problem with the training process or the environment. \\
 
-
-
-
-\textbf{Actor loss}\\
-
+\subsubsection{Actor loss}\\
 The graph of \textit{“Actor loss vs episodes” } shows how the loss of the actor changing over the course of training. The actor loss is a measure of how well the actor can select actions that lead to higher rewards. Typically, the actor loss decreases over the course of training as the actor becomes better at selecting actions.\\
-
 In the early episodes of training, the actor loss is high as the actor explores the environment and tries out different actions. As training progresses, the actor becomes more confident in its actions, and the loss decreases. If the actor loss does not decrease over the course of training, it indicates a problem with the training process or the environment itself. In such cases, it may be necessary to adjust the hyperparameters or try different training techniques to improve performance.\\
 
-\textbf{Critic loss}\\
-
-\\ The \textit{critic loss vs episode graph} shows the loss of the critic changing over the course of training. The critic loss is a measure of how well the critic can estimate the value of the current state. Critic loss decreases over the course of training as the critic becomes better at estimating the state value. 
+\subsubsection{Critic loss}\\
+The \textit{critic loss vs episode graph} shows the loss of the critic changing over the course of training. The critic loss is a measure of how well the critic can estimate the value of the current state. Critic loss decreases over the course of training as the critic becomes better at estimating the state value. 
 
 In the early episodes of training, the critic loss may be high but as it progresses, the critic becomes more confident in its estimates, and the loss decreases. If the critic loss does not decrease over the course of training, it indicates a problem with the training process or the environment itself. In such cases, it may be necessary to adjust the hyperparameters or try different training techniques to improve performance.\\
 
-\textbf{Level}\\
-
-\\ The \textit{level vs episode graph} shows how the agent's performance on different levels or stages of the environment changes over the course of training. This graph is particularly useful when training the agent on environments with different levels or stages, such as video games with multiple levels. Each point on the graph represents the agent's performance on a particular level or stage during a specific episode of the training process. The performance can be measured by different metrics such as cumulative reward, time taken to complete the level, or accuracy.\\
-
+\subsubsection{Level}\\
+The \textit{level vs episode graph} shows how the agent's performance on different levels or stages of the environment changes over the course of training. This graph is particularly useful when training the agent on environments with different levels or stages, such as video games with multiple levels. Each point on the graph represents the agent's performance on a particular level or stage during a specific episode of the training process. The performance can be measured by different metrics such as cumulative reward, time taken to complete the level, or accuracy.\\
 This graph can provide valuable insights into how the agent is progressing through the levels or stages of the environment. Ideally, the graph should show a steady increase in performance on each level over the course of training. If the agent is struggling on certain levels or stages, this can be identified by a plateau or a decline in performance on the corresponding levels.\\
-
 The shape of the graph can vary depending on the specific environment and hyperparameters used for training. In general, the graph should show a positive trend in performance over time. However, there may be some variability in performance on individual levels or stages, which can be influenced by factors such as the level's difficulty, the randomness of the environment, or the agent's exploration strategy.\\
 
-\textbf{P max}\\
-
-\\ The \textit{"p max vs episode"} graph shows how the maximum probability of the actions selected by the actor changes over the course of training. The maximum probability (p max) is the highest probability assigned by the actor to any action in each state.\\
-
+\subsubsection{P max}\\
+The \textit{"p max vs episode"} graph shows how the maximum probability of the actions selected by the actor changes over the course of training. The maximum probability (p max) is the highest probability assigned by the actor to any action in each state.\\
 Ideally, the graph should show a decreasing trend in p max over the course of training, indicating that the actor is becoming more confident in its actions and selecting a wider range of actions.\\
-
 In the early episodes of training, the p max may be high but as it progresses, the actor becomes more confident in its actions, and the p max decreases. This is a desirable outcome as a high p max indicates that the actor is not exploring enough and is potentially stuck in a suboptimal policy.\\
 If the p max does not decrease over the course of training, it may indicate a problem with the training process or the environment itself. In such cases, it may be necessary to adjust the hyperparameters or try different training techniques to improve performance.\\
 
-\textbf{Score}\\
+\subsubsection{Score}\\
+A \textit{"score vs episode graph"} is a common way to visualize performance. As the agent learns and improves its policy and value functions through training, one expects to see an upward trend in the score vs episode graph. In the beginning, the agent's performance may be poor, and the score may fluctuate wildly. As the agent learns, however, the score should become more consistent and gradually increase.\\
 
-\\ A \textit{"score vs episode graph"} is a common way to visualize performance. As the agent learns and improves its policy and value functions through training, one expects to see an upward trend in the score vs episode graph. In the beginning, the agent's performance may be poor, and the score may fluctuate wildly. As the agent learns, however, the score should become more consistent and gradually increase.\\
-
-\textbf{Step}\\
-
+\subsubsection{Step}\\
 A \textit{"step vs episode graph"} is another way to visualize the performance of a reinforcement learning algorithm. The x-axis represents the episodes or iterations of the algorithm, and the y-axis represents the total number of steps taken by the agent in each episode.\\
-
 Each step represents an interaction between the agent and the environment, where the agent selects an action based on its current policy, receives a reward from the environment, and transitions to a new state. The goal of the agent is to learn a policy that maximizes the cumulative reward over many steps.\\
 
-\textbf{Action}\\
-
+\subsubsection{Action}\\
 The \textit{"Average action vs episode" graph} shows how the average action taken by the agent changes over time as it interacts with the environment. The average action is typically calculated by taking the mean of the actions taken by the agent across a given episode or time step. It can provide insights into how the agent is exploring the environment and making decisions.\\
-
 If the average action remains constant or fluctuates significantly over time, it may indicate that the agent is not effectively exploring the environment or is having difficulty learning an optimal policy.
 On the other hand, if the average action decreases over time, it may indicate that the agent is becoming more conservative in its decision-making and focusing on exploiting known high-reward actions. This behavior may be desirable in certain scenarios, such as when the environment is relatively stable and the agent has learned a good policy.\\
-
 Alternatively, if the average action increases over time, it may indicate that the agent is becoming more exploratory and trying out new actions in the environment. This behavior may be desirable in scenarios where the agent needs to discover new high-reward actions or adapt to changes in the environment.\\
 
-\textbf{Q value}\\
+\subsubsection{Q value}\\
+\textit{Q-values} signify the expected reward for an action in a state, pivotal in RL algorithms like Q-Learning. The graph plots episodes (x-axis) against the average Q-value of the learned policy (y-axis), demonstrating the agent's learning progress. A steady increase typically reflects improved understanding of the environment. The graph's shape provides insights: a swift early rise suggests quick learning, while a slower ascent may indicate the need for more training or a different algorithm.
 
-\textit{Q-values} represent the expected reward an agent can receive by taking a specific action in a specific state. The Q-value function is a key component in many RL algorithms, such as Q-Learning and SARSA.\\
-
-The x-axis of the graph represents the number of episodes the agent has completed during its training, while the y-axis represents the average Q-value of the learned policy. Typically, the graph will show a gradual increase in the average Q-value as the agent gains more experience and learns more about the environment. This is because the agent is constantly updating its Q-value estimates based on the rewards it receives from the environment.\\
-
-The shape of the average Q-value versus episodes graph can reveal important information about the learning progress of the agent. For example, a steep increase in the average Q-value in the early episodes may indicate that the agent quickly learns about the environment and finds a good policy. On the other hand, a slower increase in the average Q-value may indicate that the agent is having a harder time learning, and may require more training or a different algorithm.\\
-
-\textbf{Average Velocity}\\
-
+\subsubsection{Average Velocity}\\
 The \textit{average velocity versus episodes graph} is a way of visualizing the learning progress of an RL algorithm in a control task where the goal is to control the velocity of an agent. \\
-
-In this graph, the x-axis represents the number of episodes the agent has completed during its training, while the y-axis represents the average velocity of the agent over those episodes. The graph typically shows a gradual increase in the average velocity as the agent gains more experience and learns more about the environment.\\
-
-In this graph, the x-axis represents the number of episodes the agent has completed during its training, while the y-axis represents the average velocity of the agent over those episodes. The graph typically shows a gradual increase in the average velocity as the agent gains more experience and learns more about the environment.\\
-
 
 \subsection{Recurrent Advantage Actor Critic Agent for Airsim }\\
 
-\textbf{RA2C}\\
 The Advantage Actor-Critic (A2C) algorithm is a reinforcement learning algorithm that combines two approaches: policy gradient and value function estimation. It is commonly used for solving continuous action space environments, where the optimal action cannot be easily determined by the agent. It consists of 2 components: an actor and a critic. The actor is responsible for selecting actions based on the current state, critic evaluates the value of the current state. They work together to improve the agent's performance in the given environment.\\
 The actor takes current states as the inputs and outputs a probability distribution over the possible actions. The critic takes the current states as input and outputs an estimate of the state's value. The value function estimate represents expected cumulative reward the agent receives from that state onwards.\\
-During training, the agent interacts with the environment to receive rewards and updates the actor and critic. The actor's parameters are updated with the policy gradient method, which encouraging agent to take actions that lead to higher rewards. The critic's parameters are updated using the difference between the estimated value and the actual reward received.\\
-The "advantage" in the name refers to the difference between the estimated and the expected value from the current state. This advantage signal is used to update the actor and encourage actions that lead to higher rewards. A2C has several advantages over other reinforcement learning algorithms as it is computationally efficient, and it converges quickly and allows for continuous action spaces, which can be difficult to handle with other methods.\\
+\begin{algorithm}[!htbp]
+\caption{Advantage Actor-Critic (RA2C) Algorithm}
+\begin{algorithmic}
+    \STATE Initialize actor $\pi(a|s,\theta)$ and critic $V(s,\omega)$ with parameters $\theta$ and $\omega$\\
+    \STATE Initialize environment, hyperparameters, and training parameters\\
+    \FOR{each episode}\\
+        \STATE Initialize state $s$\\
+        \FOR{each time step}\\
+            \STATE Select action $a \sim \pi(\cdot|s,\theta)$ using the actor\\
+            \STATE Execute action $a$, observe reward $r$ and next state $s'$\\
+            \STATE Calculate advantage $A(s,a)$ using critic's estimate\\
+            \STATE Update actor's policy using policy gradient:\\
+            \STATE \quad $\theta \leftarrow \theta + \alpha \nabla_\theta \log \pi(a|s,\theta) \cdot A(s,a)$\\
+            \STATE Update critic's value function using temporal difference error:\\
+            \STATE \quad $\omega \leftarrow \omega + \beta \nabla_\omega [V(s,\omega) - (r + \gamma V(s',\omega))]^2$\\
+            \STATE $s \leftarrow s'$\\
+        \ENDFOR\\
+    \ENDFOR\\
+\end{algorithmic}
+\end{algorithm}
+
+\subsubsection{Best Y}\\
+An increase in the Best Y graph typically indicates the agent's learning and performance improvement over time. It suggests that the agent is discovering better policies for interacting with the environment, resulting in higher rewards or enhanced performance.\\
+\begin{figure}[!htbp]
+    \centering
+    \includegraphics[width=9.5cm, height=4cm]{./images/Best Y.png}
+    \caption{Best Y graph for RA2C}
+\end{figure}
 
 
-\textbf{Best Y}\\
+\subsubsection{Actor loss}\\
+Actor loss graph remains the same over time, it suggests that the actor network has converged to a local minimum, and is no longer improving its policy. This can happen when the agent has reached a plateau in its learning, and has found a sub-optimal policy that is "good enough" for the current task. In this case, further updates to the actor network may not result in significant improvements in performance.\\
 
-\\
-\graphicspath{ {./images/} }
-\includegraphics[width=9.5cm, height=4cm]{Best Y.png}
-\caption{Figure 5.1: When Best Y graph increases, it typically means that the agent is learning and improving its performance over time. Specifically, it suggests that the agent is finding better policies for interacting with the environment, resulting in higher rewards or better performance.
-\\ }\\
-
-
-\textbf{Actor loss}\\
-
-
-\graphicspath{ {./images/} }
-\includegraphics[width=9.5cm, height=4cm]{Actor loss.png}
-\caption{Figure 5.2: Actor loss graph remains the same over time, it suggests that the actor network has converged to a local minimum, and is no longer improving its policy. This can happen when the agent has reached a plateau in its learning, and has found a sub-optimal policy that is "good enough" for the current task. In this case, further updates to the actor network may not result in significant improvements in performance.
- }\\
+\begin{figure}[!htbp]
+    \centering
+    \includegraphics[width=9.5cm, height=4cm]{./images/Actor loss.png}
+    \caption{Actor loss graph for RA2C}
+\end{figure}
 
 \textbf{Critic loss}\\
+The Critic Loss graph shows a decreasing trend with occasional fluctuations over time. This indicates that the agent is learning and improving its value function. However, it may still be exploring different policies or facing some degree of uncertainty in the environment.\\
+\begin{figure}[!htbp]
+    \centering
+    \includegraphics[width=9.5cm, height=4cm]{./images/Critic loss.png}
+    \caption{Critic loss graph for RA2C}
 
-\graphicspath{ {./images/} }
-\includegraphics[width=9.5cm, height=4cm]{Critic loss.png}
-\caption{Figure 5.3: Critic Loss graph decreases and then fluctuates over time, it suggests that the agent is learning and improving its value function, but may still be exploring different policies or facing some degree of uncertainty in the environment
-}\\
+\end{figure}
 
+\subsubsection{P max}\\
+The Pmax graph initially ascends, signaling the agent's refinement of its policy and increased confidence in action selection. Following this, a plateau emerges, indicating that the agent has attained a reasonable level of confidence in its policy. Consequently, the agent curtails further exploration, as additional efforts may yield only marginal improvements in the policy.\\
 
+\begin{figure}[!htbp]
+    \centering
+    \includegraphics[width=9.5cm, height=4cm]{./images/P max.png}
+    \caption{P max graph for RA2C}
+\end{figure}
+\vspace{-0.5cm}
+\subsubsection{Level}\\
+The Level graph shows a consistent increase over time, indicating that the agent is steadily improving its performance on the task at hand.\\
+\begin{figure}[!htbp]
+    \centering
+    \includegraphics[width=10.5cm, height=6cm]{./images/Level.png}
+    \caption{Level graph for RA2C}
+\end{figure}
+\vspace{-0.5cm}
+\subsubsection{Score}\\
+The Score graph exhibits a consistent increase over time, indicating that the agent is steadily enhancing its performance on the task at hand.\\
+\begin{figure}[!htbp]
+    \centering
+    \includegraphics[width=9.5cm, height=4cm]{./images/Score.png}
+    \caption{Score graph for RA2C}
+\end{figure}
 
-\textbf{P max}\\
-
-\graphicspath{ {./images/} }
-\includegraphics[width=9.5cm, height=4cm]{P max.png}
-\caption{Figure 5.4: Pmax graph increases and then plateaus over time, it suggests that the agent is learning to effectively balance exploration and exploitation. The initial increase in the maximum probability of selecting the best action indicates that the agent is improving its policy and becoming more confident in its actions. However, the plateau suggests that the agent has reached a reasonable level of confidence in its policy and is no longer exploring as much, as further exploration may not result in significant improvements in the policy.
- }\\
-
-\textbf{Level}\\
-
-\graphicspath{ {./images/} }
-\includegraphics[width=9.5cm, height=4cm]{Level.png}
-\caption{Figure 5.5: Level the graph increases over time, it suggests that the agent is improving its performance on the task at hand.
- }\\
-
-
-\textbf{Score}\\
-
-\graphicspath{ {./images/} }
-\includegraphics[width=9.5cm, height=4cm]{Score.png}
-
-\caption{Figure 5.6: Score graph increases over time, it suggests that the agent is improving its performance on the task at hand.
-}\\
-
-\textbf{Step}\\
-
-\graphicspath{ {./images/} }
-\includegraphics[width=9.5cm, height=4cm]{Step.png}
-\caption{Figure 5.7: Step graph increases, decreases, and then increases again over time, it may suggest that the agent is experiencing some level of instability or difficulty in learning the task. This may be because of over-fitting, finding sub-optimal policy or experiencing instability.}\\
+\subsubsection{Step}\\
+The Step graph displays fluctuations over time, indicating that the agent might be encountering challenges or instability in learning the task. Possible reasons include overfitting, suboptimal policy discovery, or instability.\\
+\begin{figure}[!htbp]
+    \centering
+    \includegraphics[width=9.5cm, height=4cm]{./images/Step.png}
+    \caption{Step graph for RA2C}
+\end{figure}
  
 \\
 
 \subsection{Recurrent Deep Deterministic Policy Gradient}\\
-
-\textbf{RDDPG}\\
-
 The Recurrent Deep Deterministic Policy Gradient (RDPG) algorithm is a type of reinforcement learning algorithm used to train deep neural networks to learn optimal policies for sequential decision-making problems. RDPG is an extension of the Deep Deterministic Policy Gradient (DDPG) algorithm, which itself is a variant of the Q-learning algorithms.\\
+
 It optimizes a policy network and a value network simultaneously. The policy network takes the current state of the environment as input and outputs an action to be taken. The value network takes the current state and the action chosen by the policy network as input and outputs an estimate of the expected return from that state-action pair.\\
+
 It extends DDPG by introducing a recurrent neural network (RNN) into the policy network. The RNN allows the policy network to maintain a memory of past states and actions, which can be used to inform future decisions. This is particularly useful in tasks where the optimal action depends on a sequence of past actions and observations.\\
+
 The policy network is also trained to maximize the expected return over a sequence of actions. The value network is trained to minimize the difference between its estimate of the expected return and the actual return received after taking a sequence of actions. Both networks are updated using backpropagation through time (BPTT), which is a variant of backpropagation that allows gradients to be computed over a sequence of inputs.\\
+\begin{algorithm}\\
+\caption{Recurrent Deep Deterministic Policy Gradient (RDDPG) Algorithm}
+\begin{algorithmic}
+    \STATE Initialize policy network $\pi_{\theta}$ and value network $V_{\phi}$ with parameters $\theta$ and $\phi$\\
+    \STATE Initialize environment, hyperparameters, and training parameters\\
+    \FOR{each episode}\\
+        \STATE Initialize recurrent state $h_0$\\
+        \STATE Initialize state $s_0$\\
+        \FOR{each time step}\\
+            \STATE Sample action $a_t \sim \pi_{\theta}(s_t, h_t)$ from the policy network\\
+            \STATE Execute action $a_t$, observe reward $r_t$, and new state $s_{t+1}$\\
+            \STATE Update recurrent state $h_{t+1}$ using the RNN dynamics\\
+            \STATE Calculate the advantage estimate $A_t$\\
+            \STATE Update policy network and value network using backpropagation through time (BPTT):\\
+            \STATE \quad Policy network update: $\theta \leftarrow \theta + \alpha \nabla_\theta\\ J(\theta)$\\
+            \STATE \quad Value network update: $\phi \leftarrow \phi + \beta \nabla_\phi\\ \left(\frac{1}{2}(V_\phi(s_t, h_t) - (r_t + \gamma V_\phi(s_{t+1}, h_{t+1})))^2\right)$\\
+            \STATE $s_t \leftarrow s_{t+1}$, $h_t \leftarrow h_{t+1}$\\
+        \ENDFOR\\
+    \ENDFOR\\
+\end{algorithmic}
+\end{algorithm}
 
-\textbf{Actor Loss}\\
+\subsubsection{Actor Loss}\\
+The \textit{Actor loss} graph initially rises, indicating the agent's exploration of various policies. Subsequently, it decreases as the agent refines its strategy and converges towards a better solution. The initial increase may stem from the exploration phase, testing different policies, possibly leading to suboptimal choices. With increased experience and policy updates based on rewards, the actor loss diminishes as the agent converges to an improved solution.
+\begin{figure}[!htbp]
+    \centering
+    \includegraphics[width=9.5cm, height=4cm]{./images/Actor loss.png}
+    \caption{Actor loss graph for RDDPG}
+\end{figure}\\
 
-\graphicspath{ {./images/} }
-\includegraphics[width=9.5cm, height=4cm]{Actor loss-2.png}
-\caption{Figure 5.8: \textit{Actor loss} graph increases and then decreases over time, it suggests that the agent is exploring different policies and gradually converging to a better solution. The initial increase in the actor loss could be due to the agent trying out different policies and exploring the environment, which may result in suboptimal policies being selected. However, as the agent gains more experience and updates its policy based on the observed rewards, the actor loss should start to decrease again as the agent converges to a better solution.}\\
+\subsubsection{Average Action (Noise)}\\
+\textit{Avg Action (noise)} graph fluctuates over time, suggesting that the agent is experiencing some level of instability or variability in its exploration behavior.
+\begin{figure}[!htbp]
+    \centering
+    \includegraphics[width=9.5cm, height=4cm]{./images/Avg Action (noise).png}
+    \caption{Average action noise graph for RDDPG}
+\end{figure}
 
+\subsubsection{Average Q}\\
+\textit{Average Q} graph increases over time, suggesting that the agent is improving its estimates of the optimal state-action value function and making better decisions.
+\begin{figure}[!htbp]
+    \centering
+    \includegraphics[width=9.5cm, height=4cm]{./images/Avg Q.png}
+    \caption{Average Q graph for RDDPG}
+\end{figure}
 
-\textbf{Average Action (Noise)}\\
+\subsubsection{Average velocity}\\
+\textit{Average velocity} graph increases initially and then plateaus over time, suggesting that the agent is improving its ability to move efficiently through the environment but has reached a limit in its performance. It may be necessary to adjust the agent's training parameters or explore new techniques to continue improving its performance. Alternatively, the plateau in average velocity may be due to the environment itself.
+\begin{figure}[!htbp]
+    \centering
+    \includegraphics[width=9.5cm, height=4cm]{./images/Avg velocity.png}
+    \caption{Average velocity graph for RDDPG}
+\end{figure}
 
-\graphicspath{ {./images/} }
-\includegraphics[width=9.5cm, height=4cm]{Avg Action (noise).png}
-\caption{Figure 5.9: \textit{Avg Action (noise) }graph fluctuates over time, it suggests that the agent is experiencing some level of instability or variability in its exploration behavior.
-}\\
+\subsubsection{Best Y}\\
+\textit{Best Y} When this graph increases, it typically means that the agent is learning and improving its performance over time. Specifically, it suggests that the agent is finding better policies for interacting with the environment, resulting in higher rewards or better performance.
+\begin{figure}[!htbp]
+    \centering
+    \includegraphics[width=9.5cm, height=4cm]{./images/Best Y.png}
+    \caption{Best Y graph for RDDPG}
+\end{figure}
 
-\textbf{Average Q}\\
+\subsubsection{Critic Loss}\\
+\textit{Critic Loss} graph increases over time, suggesting that the agent is not learning effectively and is not improving its value function as it may have a high learning rate, architecture may not be well-suited, or the rewards may be delayed.
+\begin{figure}[!htbp]
+    \centering
+    \includegraphics[width=10.5cm, height=6cm]{./images/Critic Loss.png}
+    \caption{Critic loss graph for RDDPG}
+\end{figure}
 
-\graphicspath{ {./images/} }
-\includegraphics[width=9.5cm, height=4cm]{Avg Q.png}
-\caption{Figure 5.10: \textit{Average Q }graph increases over time, it suggests that the agent is improving its estimates of the optimal state-action value function and making better decisions.
-}\\
+\subsubsection{Level}\\
+\textit{Level} graph increases over time, suggesting that the agent is improving its performance on the task at hand.
+\begin{figure}[!htbp]
+    \centering
+    \includegraphics[width=10.5cm, height=6cm]{./images/Level.png}
+    \caption{Level graph for RDDPG}
+\end{figure}
 
+\subsubsection{Score}\\
+\textit{Score} graph increases over time, suggesting that the agent is improving its performance on the task at hand.
+\begin{figure}[!htbp]
+    \centering
+    \includegraphics[width=10.5cm, height=6cm]{./images/Score.png}
+    \caption{Score graph for RDDPG}
+\end{figure}
 
-\textbf{Average velocity}\\
-
-\graphicspath{ {./images/} }
-\includegraphics[width=9.5cm, height=4cm]{Avg velocity.png}
-\caption{Figure 5.11: \textit{Average velocity }graph increases initially and then plateaus over time, it suggests that the agent is improving its ability to move efficiently through the environment, but has reached a limit in its performance. It may be necessary to adjust the agent's training parameters or explore new techniques to continue improving its performance. Alternatively, it is possible that the plateau in the average velocity is due to the environment itself.
-}\\
-
-
-\textbf{Best Y}\\
-
-\graphicspath{ {./images/} }
-\includegraphics[width=9.5cm, height=4cm]{Best Y-2.png}
-\caption{Figure 5.12: \textit{Best Y } When this graph increases, it typically means that the agent is learning and improving its performance over time. Specifically, it suggests that the agent is finding better policies for interacting with the environment, resulting in higher rewards or better performance.
-}\\
-
-
-\textbf{Critic Loss}\\
-
-\graphicspath{ {./images/} }
-\includegraphics[width=9.5cm, height=4cm]{Critic loss-2.png}
-\caption{Figure 5.13: \textit{Critic Loss } graph increases over time, it suggests that the agent is not learning effectively and is not improving its value function as it may have a high learning rate, architecture may not be well suited or the rewards may be delayed.
-}\\
-
-\textbf{Level}\\
-
-\graphicspath{ {./images/} }
-\includegraphics[width=9.5cm, height=4cm]{Level-2.png}
-\caption{Figure 5.14: \textit{Level }graph increases over time, it suggests that the agent is improving its performance on the task at hand.
-}\\
-
-
-
-\textbf{Score}\\
-
-\graphicspath{ {./images/} }
-\includegraphics[width=9.5cm, height=4cm]{Score-2.png}
-\caption{Figure 5.15: \textit{Score } graph increases over time, it suggests that the agent is improving its performance on the task at hand
-}\\
-
-
-\textbf{Step}\\
-
-\graphicspath{ {./images/} }
-\includegraphics[width=9.5cm, height=4cm]{Step-2.png}
-\caption{Figure 5.16: \textit{Step }graph fluctuates over time, it suggests that the agent is experiencing some level of instability in its learning process.
-}\\
-
-\subsection{Recurrent Deep Deterministic Policy Gradient}\\
-
-\textbf{RDDPG-PER}\\
-
-The Recurrent Deep Deterministic Policy Gradient (RDPG) algorithm is a type of reinforcement learning algorithm used to train deep neural networks to learn optimal policies for sequential decision-making problems. RDPG is an extension of the Deep Deterministic Policy Gradient (DDPG) algorithm, which itself is a variant of the Q-learning algorithms.\\
-It optimizes a policy network and a value network simultaneously. The policy network takes the current state of the environment as input and outputs an action to be taken. The value network takes the current state and the action chosen by the policy network as input and outputs an estimate of the expected return from that state-action pair.\\
-It extends DDPG by introducing a recurrent neural network (RNN) into the policy network. The RNN allows the policy network to maintain a memory of past states and actions, which can be used to inform future decisions. This is particularly useful in tasks where the optimal action depends on a sequence of past actions and observations.\\
-The policy network is also trained to maximize the expected return over a sequence of actions. The value network is trained to minimize the difference between its estimate of the expected return and the actual return received after taking a sequence of actions. Both networks are updated using backpropagation through time (BPTT), which is a variant of backpropagation that allows gradients to be computed over a sequence of inputs.\\
-
-\textbf{Actor Loss}\\
-
-\graphicspath{ {./images/} }
-\includegraphics[width=9.5cm, height=4cm]{Actor loss-3.png}
-\caption{Figure 5.17: \textit{Actor loss} graph increases and then decreases over time, it suggests that the agent is exploring different policies and gradually converging to a better solution. The initial increase in the actor loss could be due to the agent trying out different policies and exploring the environment, which may result in suboptimal policies being selected. However, as the agent gains more experience and updates its policy based on the observed rewards, the actor loss should start to decrease again as the agent converges to a better solution.
-}\\
+\subsubsection{Step}\\
+\textit{Step} graph fluctuates over time, suggesting that the agent is experiencing some level of instability in its learning process.
+\begin{figure}[!htbp]
+    \centering
+    \includegraphics[width=10.5cm, height=6cm]{./images/Step.png}
+    \caption{Step graph for RDDPG}
+\end{figure}
 
 
-\textbf{Average Action (Noise)}\\
+\subsection{Recurrent Deep Deterministic Policy Gradient with PER}
+Recurrent Deep Deterministic Policy Gradient with Prioritized Experience Replay (RDPG-PER) holds significant promise in drone applications, where autonomous decision-making in complex and dynamic environments is paramount.\\
 
-\graphicspath{ {./images/} }
-\includegraphics[width=9.5cm, height=4cm]{Avg Action (noise)-2.png}
-\caption{Figure 5.18: \textit{Avg Action (noise)} graph fluctuates over time, it suggests that the agent is experiencing some level of instability or variability in its exploration behavior.
-}\\
+By incorporating a recurrent neural network (RNN), RDPG-PER enables drones to make informed, sequential decisions that consider past observations and actions, vital for tasks such as mapping, exploration, and surveillance. The integration of Prioritized Experience Replay (PER) enhances learning by prioritizing experiences, making it particularly valuable for drones encountering critical or rare events during training. \\
+This combination of recurrent architectures, prioritized learning, and adaptability equips drones with efficient and stable policy improvement, allowing them to navigate diverse and non-stationary environments effectively. \\
 
-\textbf{Average Q}\\
+Additionally, RDPG-PER enhances long-term planning capabilities, crucial in applications like search and rescue missions, making use of the priority experience replay to get a grasp of what went wrong and avoid that, preventing the wastage of training hours that went into training the model. In drone applications, particularly in mapping and exploration tasks, the ability to remember previously visited locations and adapt actions based on prior mapping data is crucial. The RNN in RDPG-PER enables drones to maintain a memory of the environment, facilitating efficient exploration and mapping over time. RDPG-PER's recurrent architecture, combined with prioritized learning, equips drones with the ability to plan and execute actions that maximize mission success over extended periods. \\
 
-\graphicspath{ {./images/} }
-\includegraphics[width=9.5cm, height=4cm]{Avg Q-2.png}
-\caption{Figure 5.19: \textit{Average Q }graph increases over time, it suggests that the agent is improving its estimates of the optimal state-action value function and making better decisions.
-}\\
+\begin{algorithm}[!htbp]
+\caption{Recurrent Deep Deterministic Policy Gradient with Prioritized Experience Replay (RDPG-PER) Algorithm}
+\begin{algorithmic}
+    \STATE Initialize policy network $\pi_{\theta}$ and value network $V_{\phi}$ with parameters $\theta$ and $\phi$\\
+    \STATE Initialize environment, hyperparameters, and training parameters\\
+    \STATE Initialize replay buffer $\mathcal{D}$ with capacity $N$\\
+    \FOR{each episode}\\
+        \STATE Initialize state $s$\\
+        \STATE Initialize recurrent state $h$ (memory)\\
+        \FOR{each time step}\\
+            \STATE Select action $a \sim \pi_{\theta}(s, h)$ from the policy network\\
+            \STATE Execute action $a$, observe reward $r$ and new state $s'$\\
+            \STATE Update recurrent state $h$ using RNN dynamics\\
+            \STATE Calculate advantage $A(s, a)$\\
+            \STATE Store transition $(s, a, r, s', h, A(s, a))$ in $\mathcal{D}$\\
+            \STATE Sample a batch of transitions $(s_i, a_i, r_i, s'_i, h_i, A_i)$ from $\mathcal{D}$ using PER priorities\\
+            \STATE Update policy network using policy gradient with prioritized sampling:\\
+            \STATE \quad $\theta \leftarrow \theta + \alpha \nabla_\theta \log \pi_{\theta}(a_i|s_i, h_i) \cdot A_i$\\
+            \STATE Update value network using temporal difference error:\\
+            \STATE \quad $\phi \leftarrow \phi + \beta \nabla_\phi \left(\frac{1}{2}(V_\phi(s_i, h_i) - (r_i + \gamma V_\phi(s'_i, h'_i))) \right)^2$\\
+            \STATE Update priorities in the replay buffer based on TD error\\
+            \STATE $s \leftarrow s'$, $h \leftarrow h'$\\
+        \ENDFOR\\
+    \ENDFOR\\
+\end{algorithmic}
+\end{algorithm}\\
 
-\textbf{Average velocity}\\
-
-\graphicspath{ {./images/} }
-\includegraphics[width=9.5cm, height=4cm]{Avg velocity-2.png}
-\caption{Figure 5.20: \textit{Average velocity} graph increases initially and then plateaus over time, it suggests that the agent is improving its ability to move efficiently through the environment, but has reached a limit in its performance. It may be necessary to adjust the agent's training parameters or explore new techniques to continue improving its performance. Alternatively, it is possible that the plateau in the average velocity is due to the environment itself.
-}\\
-
-\textbf{Best Y}\\
-
-\graphicspath{ {./images/} }
-\includegraphics[width=9.5cm, height=4cm]{Best Y-3.png}
-\caption{Figure 5.21: \textit{Best Y} When this graph increases, it typically means that the agent is learning and improving its performance over time. Specifically, it suggests that the agent is finding better policies for interacting with the environment, resulting in higher rewards or better performance.
-}\\
-
-\textbf{Critic Loss}\\
-
-\graphicspath{ {./images/} }
-\includegraphics[width=9.5cm, height=4cm]{Critic loss-3.png}
-\caption{Figure 5.22: \textit{Critic Loss} graph increases over time, it suggests that the agent is not learning effectively and is not improving its value function as it may have a high learning rate, architecture may not be well suited or the rewards may be delayed.
-}\\
-
-\textbf{Level}\\
-
-\graphicspath{ {./images/} }
-\includegraphics[width=9.5cm, height=4cm]{Level-3.png}
-\caption{Figure 5.23: \textit{Level} graph increases over time, it suggests that the agent is improving its performance on the task at hand
-}\\
-
-\textbf{Score}\\
-
-\graphicspath{ {./images/} }
-\includegraphics[width=9.5cm, height=4cm]{Score-3.png}
-\caption{Figure 5.24: \textit{Score }graph increases over time, it suggests that the agent is improving its performance on the task at hand.
-}\\
-
-\textbf{Step}\\
+\subsubsection{Actor Loss}\\
+The graph initially ascends as the agent explores diverse policies, gradually converging toward an improved solution. This initial increase in actor loss is attributed to the agent experimenting with various policies and exploring the environment, possibly leading to suboptimal choices. Nevertheless, with accumulating experience and policy updates based on observed rewards, the actor loss diminishes, signifying the agent's convergence to a superior solution.\\
 
 \graphicspath{ {./images/} }
-\includegraphics[width=9.5cm, height=4cm]{Step-3.png}
-\caption{Figure 5.25 \textit{Step }graph fluctuates over time, it suggests that the agent is experiencing some level of instability in its learning process.
-}\\
+\begin{figure}[!htbp]
+  \centering
+  \includegraphics[width=9.5cm, height=4cm]{Actor loss-3.png}
+  \caption{Actor loss graph for RDPG-PER}  
+  \label{fig:actor_loss}
+\end{figure}
+
+\subsubsection{Average Action (Noise)}\\
+The graph fluctuates over time, indicating that the agent experiences some level of instability or variability in its exploration behavior.
+\graphicspath{ {./images/} }
+\begin{figure}[!htbp]
+  \centering
+  \includegraphics[width=9.5cm, height=4cm]{Avg Action (noise)-2.png}
+  \caption{Average action noise graph for RDPG-PER}  
+  \label{fig:avg_action_noise}
+\end{figure}
+
+
+\subsubsection{Average Q}\\
+The graphical representation depicts an unequivocal and substantial upward trajectory, unequivocally illustrating the agent's relentless and considerable augmentation in its capability to estimate the optimal state-action value function. This enduring and remarkable improvement underscores the agent's unwavering commitment to refining its comprehensive understanding of the environment, culminating in a progressively sophisticated and highly effective decision-making prowess throughout its continuous learning journey.\\
+\graphicspath{ {./images/} }
+\begin{figure}[!htbp]
+  \centering
+  \includegraphics[width=9.5cm, height=4cm]{Avg Q-2.png}
+  \caption{Average Q graph for RDPG-PER}  
+  \label{fig:avg_q}
+\end{figure}
+
+
+\subsubsection{Average velocity}\\
+The graph initially rises, signaling the agent's enhanced efficiency in navigating the environment. However, it plateaus, suggesting a performance limit. Adjusting training parameters or exploring new techniques may be necessary for further improvement. Alternatively, the plateau could be inherent to the environment.\\
+\graphicspath{ {./images/} }
+\begin{figure}[!htbp]
+  \centering
+  \includegraphics[width=9.5cm, height=4cm]{Avg velocity-2.png}
+  \caption{Average velocity graph for RDPG-PER}  
+  \label{fig:avg_velocity}
+\end{figure}
+
+
+\subsubsection{Best Y}\\
+The unwavering ascent evident in this graph serves as a compelling indicator of the agent's relentless commitment to continuous learning and substantial performance amplification. More precisely, it underscores the agent's exceptional proficiency in not only uncovering but also meticulously implementing increasingly superior policies for highly effective interaction with the environment. This heightened level of strategic decision-making manifests in elevated rewards, culminating in an overarching and remarkable enhancement in the agent's overall performance.
+
+\graphicspath{ {./images/} }
+\begin{figure}[!htbp]
+  \centering
+  \includegraphics[width=9.5cm, height=4cm]{Best Y-3.png}
+  \caption{Best Y graph for RDPG-PER}  
+  \label{fig:best_y}
+\end{figure}
+
+
+\subsubsection{Critic Loss}\\
+When this graph increases over time, it suggests that the agent is not learning effectively and is not improving its value function. This may be due to a high learning rate, an architecture that is not well-suited, or delayed rewards.
+\graphicspath{ {./images/} }
+\begin{figure}[!htbp]
+  \centering
+  \includegraphics[width=9.5cm, height=4cm]{Critic loss-3.png}
+  \caption{Critic loss graph for RDPG-PER}
+  \label{fig:critic_loss}
+\end{figure}
+
+
+\subsubsection{Level}\\
+When this graph increases over time, it suggests that the agent is improving its performance on the task at hand.
+\graphicspath{ {./images/} }
+\begin{figure}[!htbp]
+  \centering
+  \includegraphics[width=10.5cm, height=6cm]{Level-3.png}
+  \caption{Level graph for RDPG-PER}
+  \label{fig:level}
+\end{figure}
+
+
+\subsubsection{Score}\\
+When this graph increases over time, it suggests that the agent is improving its performance on the task at hand.
+\graphicspath{ {./images/} }
+\begin{figure}[!htbp]
+  \centering
+  \includegraphics[width=10.5cm, height=6cm]{Score-3.png}
+  \caption{Score graph for RDPG-PER}
+  \label{fig:score}
+\end{figure}
+
+
+\subsubsection{Step}\\
+When this graph fluctuates over time, it suggests that the agent is experiencing some level of instability in its learning process.
+\graphicspath{ {./images/} }
+\begin{figure}[!htbp]
+  \centering
+  \includegraphics[width=10.5cm, height=6cm]{Step-3.png}
+  \caption{Step graph for RDPG-PER}
+  \label{fig:step}
+\end{figure}
+
 
 \subsection{Recurrent Deep Q-Network}\\
-
-\textbf{RDQN}\\
 
 The Recurrent Deep Q-Network (R-DQN) algorithm is an extension of the Deep Q-Network (DQN) algorithm that is designed to work with sequential or time-dependent data.\\
 It uses a neural network to approximate the Q-value function, which estimates the expected reward for taking a particular action in a particular state. However, instead of processing each state independently, as in the original DQN, it considers the temporal dependencies between states by using a recurrent neural network (RNN).\\
 The RNN allows the algorithm to remember previous states and actions taken, which can be used to inform future decisions. This is especially useful in tasks where the current state is dependent on previous states, such as in video games or robotics.\\
-The training process for R-DQN is like DQN, with the algorithm attempting to learn the optimal Q-values by minimizing the difference between the predicted Q-values and the actual Q-values obtained through experience. However, since the RNN introduces additional complexity, the training process is more computationally expensive than DQN.\\
+At its core, R-DQN is tasked with learning a Q-value function—an essential component in reinforcement learning. The Q-value function estimates the expected reward an agent can attain by taking a specific action in a given state. However, what sets R-DQN apart is its capacity to consider temporal dependencies between states. \\
+The training process for R-DQN is like DQN, with the algorithm attempting to learn the optimal Q-values by minimizing the difference between the predicted Q-values and the actual Q-values obtained through experience.\\
+However, since the RNN introduces additional complexity, the training process is more computationally expensive than DQN.\\
 
-\textbf{Average Q}\\
+\begin{algorithm}
+\caption{Recurrent Deep Q-Network (R-DQN) Algorithm}
+\begin{algorithmic}
+    \STATE Initialize neural network $Q_\theta$ with parameters $\theta$\\
+    \STATE Initialize environment, replay buffer $\mathcal{D}$, and hyperparameters\\
+    \FOR{each episode}\\
+        \STATE Initialize state $s$\\
+        \STATE Initialize recurrent state $h$ (memory)\\
+        \FOR{each time step}\\
+            \STATE Select action $a$ with epsilon-greedy strategy based on $Q_\theta(s, h)$\\
+            \STATE Execute action $a$, observe reward $r$ and new state $s'$\\
+            \STATE Update recurrent state $h$ using RNN dynamics\\
+            \STATE Store transition $(s, a, r, s', h)$ in $\mathcal{D}$\\
+            \STATE Sample a mini-batch of transitions from $\mathcal{D}$\\
+            \STATE Calculate target Q-values using the target network or Double DQN\\
+            \STATE Update $Q_\theta$ using temporal difference error:\\
+            \STATE \quad $\theta \leftarrow \theta + \alpha \nabla_\theta \left(\frac{1}{2}\\(Q_\theta(s, h, a) - \text{Target Q-Value})^2 \right)$\\
+            \STATE $s \leftarrow s'$, $h \leftarrow h'$\\
+        \ENDFOR\\
+    \ENDFOR\\
+\end{algorithmic}\\
+\end{algorithm}\\
+\vspace{1cm}
+\subsubsection{Average Q}\\
+\textit{Average Q} graph increases over time, suggesting that the agent is improving its estimates of the optimal state-action value function and making better decisions.
+\graphicspath{ {./images/} }
+\begin{figure}[!htbp]
+  \centering
+  \includegraphics[width=9.5cm, height=4cm]{Avg Q-3.png}
+  \caption{Average Q graph for R-DQN}
+  \label{fig:avg-q}
+\end{figure}
+
+
+
+\subsubsection{Best Y}\\
+\textit{Best Y} graph fluctuates for reinforcement algorithms, indicating that the performance of the agent is not consistent over time.
+\graphicspath{ {./images/} }
+\begin{figure}[!htbp]
+  \centering
+  \includegraphics[width=9.5cm, height=4cm]{Best Y-4.png}
+  \caption{Best Y graph for R-DQN}
+  \label{fig:best-y-4}
+\end{figure}
+
+
+\subsubsection{Critic Loss}\\
+The upward trajectory observed in the \textit{Critic Loss} graph over time suggests that the agent encounters challenges in effective learning and potential stagnation in improving its value function. Possible factors contributing to this trend include a high learning rate, architectural issues within the model, or delays in the receipt of rewards during the learning process. Addressing these issues and optimizing the learning approach may be pivotal for the agent's enhanced performance and more efficient value function estimation.
 
 \graphicspath{ {./images/} }
-\includegraphics[width=9.5cm, height=4cm]{Avg Q-3.png}
-\caption{Figure 5.26: \textit{Average Q}  graph increases over time, it suggests that the agent is improving its estimates of the optimal state-action value function and making better decisions.
-}\\
+\begin{figure}[!htbp]
+  \centering
+  \includegraphics[width=9.5cm, height=4cm]{Critic loss-4.png}
+  \caption{Critic loss graph for R-DQN}
+  \label{fig:critic-loss-4}
+\end{figure}
 
 
-\textbf{Best Y}\\
-
+\subsubsection{Level}\\
+\textit{Level} graph increases over time, indicating that the agent is improving its performance on the task at hand.
 \graphicspath{ {./images/} }
-\includegraphics[width=9.5cm, height=4cm]{Best Y-4.png}
-\caption{Figure 5.27: \textit{Best Y} graph fluctuates for reinforcement algorithms, it means that the performance of the agent is not consistent over time.
-}\\
+\begin{figure}[!htbp]
+  \centering
+  \includegraphics[width=10.5cm, height=6cm]{Level-4.png}
+  \caption{Level graph for R-DQN}
+  \label{fig:level-4}
+\end{figure}
 
-\textbf{Critic Loss}\\
 
+\subsubsection{Score}\\
+\textit{Score} graph increases over time, indicating that the agent is improving its performance on the task at hand.
 \graphicspath{ {./images/} }
-\includegraphics[width=9.5cm, height=4cm]{Critic loss-4.png}
-\caption{Figure 5.28: \textit{Critic Loss:} graph increases over time, it suggests that the agent is not learning effectively and is not improving its value function as it may have a high learning rate, architecture may not be well suited or the rewards may be delayed
-}\\
+\begin{figure}[!htbp]
+  \centering
+  \includegraphics[width=10.5cm, height=6cm]{Score-4.png}
+  \caption{Score graph for R-DQN}
+  \label{fig:score-4}
+\end{figure}
 
-\textbf{Level}\\
 
+\subsubsection{Step}\\
+\textit{Step} graph fluctuates over time, indicating that the agent is experiencing some level of instability in its learning process.
 \graphicspath{ {./images/} }
-\includegraphics[width=9.5cm, height=4cm]{Level-4.png}
-\caption{Figure 5.29: \textit{Level:} graph increases over time, it suggests that the agent is improving its performance on the task at hand.
-}\\
+\begin{figure}[!htbp]
+  \centering
+  \includegraphics[width=10.5cm, height=6cm]{Step-4.png}
+  \caption{Step graph for R-DQN}
+  \label{fig:step-4}
+\end{figure}
 
-\textbf{Score}\\
 
+\subsection{Twin Delayed Deep Deterministic Policy Gradient with PER}\\
+
+TD3 (Twin Delayed Deep Deterministic Policy Gradient) emerges as a sophisticated reinforcement learning algorithm tailored explicitly for continuous control tasks. Notably, it incorporates the innovative concept of PER (Prioritized Experience Replay), an extension that elevates the standard experience replay technique.\\
+
+Within TD3, the utilization of dual Q-networks is a key facet, tasked with estimating the value function for intricate state-action pairs. Policy refinement is achieved by minimizing the loss function, a critical interplay between the Q-value and the target value. The latter is intricately computed as the cumulative sum of the reward and the discounted Q-value of the subsequent state, as appraised by the target network. A crucial mechanism to counteract potential overestimation of Q-values involves the strategic deployment of a less frequently updated target network, contributing to the stability of the learning process.\\
+
+In tandem, the introduction of noise during action selection serves as a deliberate strategy to inject a dynamic element, fostering exploration within the learning process. Extending its prowess with PER, TD3 harnesses the prioritization of experiences, intricately weighing them based on their estimated importance. This prioritization dynamically influences the loss function during policy updates, ensuring a nuanced and impactful learning trajectory.\\
+
+In synthesis, the fusion of TD3 and PER presents a compelling framework, promising not only improved learning dynamics but also a swifter convergence paradigm, particularly advantageous in the intricate domain of continuous control tasks.\\
+
+\begin{algorithm}[!htbp]
+\caption{TD3-PER (Twin Delayed Deep Deterministic Policy Gradient with Prioritized Experience Replay) Algorithm}
+\begin{algorithmic}
+    \STATE Initialize two Q-networks $Q_1$ and $Q_2$ with parameters $\theta_{Q_1}$ and $\theta_{Q_2}$\\
+    \STATE Initialize policy network $\pi$ with parameters $\theta_\pi$\\
+    \STATE Initialize target networks $Q_{1\text{target}}$, $Q_{2\text{target}}$, and $\pi_{\text{target}}$ with parameters $\theta_{Q_1}^{\text{target}}$,\\ $\theta_{Q_2}^{\text{target}}$, and $\theta_\pi^{\text{target}}$ (set them equal to their respective online networks)\\
+    \STATE Initialize replay buffer $\mathcal{D}$ with capacity $N$\\
+    \STATE Initialize exploration noise parameters\\
+    \FOR{each episode}\\
+        \STATE Initialize state $s$\\
+        \FOR{each time step}\\
+            \STATE Select action $a$ with noise added from policy network $\pi(s, \theta_\pi)$\\
+            \STATE Execute action $a$, observe reward $r$ and new state $s'$\\
+            \STATE Store transition $(s, a, r, s')$ in $\mathcal{D}$ with priority based on TD error\\
+            \STATE Sample a mini-batch of transitions from $\mathcal{D}$ with prioritized sampling\\
+            \STATE Calculate target Q-values using target networks:\\
+            \STATE \quad $y = r + \gamma \min(Q_{1\text{target}}(s', \pi_{\text{target}}(s', \theta_\pi^{\text{target}})), Q_{2\text{target}}(s', \pi_{\text{target}}(s', \theta_\pi^{\text{target}})))$\\
+            \STATE Update Q-networks:\\
+            \STATE \quad $\theta_{Q_1} \leftarrow \theta_{Q_1} - \alpha \nabla_{\theta_{Q_1}} \left((Q_1(s, a, \theta_{Q_1}) - y)^2\right)$\\
+            \STATE \quad $\theta_{Q_2} \leftarrow \theta_{Q_2} - \alpha \nabla_{\theta_{Q_2}} \left((Q_2(s, a, \theta_{Q_2}) - y)^2\right)$\\
+            \STATE Update policy network:\\
+            \STATE \quad $\theta_\pi \leftarrow \theta_\pi + \beta \nabla_{\theta_\pi} \left(Q_1(s, \pi(s, \theta_\pi), \theta_{Q_1})\right)$\\
+            \STATE Update target networks (soft update):\\
+            \STATE \quad $\theta_{Q_1}^{\text{target}} \leftarrow \tau \theta_{Q_1} + (1 - \tau) \theta_{Q_1}^{\text{target}}$\\
+            \STATE \quad $\theta_{Q_2}^{\text{target}} \leftarrow \tau \theta_{Q_2} + (1 - \tau) \theta_{Q_2}^{\text{target}}$\\
+            \STATE \quad $\theta_\pi^{\text{target}} \leftarrow \tau \theta_\pi + (1 - \tau) \theta_\pi^{\text{target}}$\\
+            \STATE $s \leftarrow s'$\\
+        \ENDFOR\\
+    \ENDFOR\\
+\end{algorithmic}
+\end{algorithm}\\
+
+\subsubsection{Actor Loss}\\
+\textit{Actor loss} graph increases over time, indicating that the agent is not learning effectively and is not improving its policy. This may be due to a high learning rate, an unsuitable architecture, or delayed rewards.
 \graphicspath{ {./images/} }
-\includegraphics[width=9.5cm, height=4cm]{Score-4.png}
-\caption{Figure 5.30: \textit{Score: } graph increases over time, it suggests that the agent is improving its performance on the task at hand
-}\\
+\begin{figure}[!htbp]
+  \centering
+  \includegraphics[width=9.5cm, height=4cm]{Actor loss-4.png}
+  \caption{Actor loss graph for TD3-PER}
+  \label{fig:actor-loss-4}
+\end{figure}
 
-\textbf{Step}\\
 
+\subsubsection{Average Action (Noise)}\\
+\textit{Avg Action (noise)} graph fluctuates over time, suggesting that the agent is experiencing some level of instability or variability in its exploration behavior.
 \graphicspath{ {./images/} }
-\includegraphics[width=9.5cm, height=4cm]{Step-4.png}
-\caption{Figure 5.31: \textit{Step: }graph fluctuates over time, it suggests that the agent is experiencing some level of instability in its learning process.
-}\\
+\begin{figure}[!htbp]
+  \centering
+  \includegraphics[width=10.5cm, height=6cm]{Avg Action (noise)-3.png}
+  \caption{Average action noise graph for TD3-PER}
+  \label{fig:avg-action-noise-3}
+\end{figure}
+\\
+\\
 
-\subsection{Twin Delayed Deep Deterministic Policy Gradient}\\
-
-\textbf{TD3-PER}\\
-
-TD3 (Twin Delayed Deep Deterministic Policy Gradient) is a reinforcement learning algorithm that can be used for continuous control tasks. PER (Prioritized Experience Replay) is an extension of the standard experience replay technique that prioritizes the replay of certain experiences based on their estimated importance.\\
-In this, two Q-networks are used to estimate the value function of state-action pairs. The policy is updated by minimizing the loss function between the Q-value and the target value, which is calculated as the sum of the reward and the discounted Q-value of the next state as estimated by the target network. To prevent overestimation of the Q-values, a target network is used that is updated less frequently than the main network. \\Additionally, noise is added to the action selection process to encourage exploration.\\
-To incorporate PER into TD3, the priority of each experience is used to weight the loss function during the policy update. Specifically, the loss function is multiplied by a weight factor that is proportional to the priority of the experience. Additionally, the replay buffer is updated using a stochastic prioritization method, which allows for a balance between prioritization and random sampling. Overall, the combination of TD3 and PER can lead to improved learning and faster convergence in continuous control tasks.\\
-
-\textbf{Actor Loss}\\
-
+\subsubsection{Average Q}\\
+\textit{Average Q} graph increases over time, indicating that the agent is enhancing its estimates of the optimal state-action value function and making improved decisions.
 \graphicspath{ {./images/} }
-\includegraphics[width=9.5cm, height=4cm]{Actor loss-4.png}
-\caption{Figure 5.32: \textit{Actor loss}: graph increases over time, it suggests that the agent is not learning effectively and is not improving its policy. This may be because the learning rate may be too high, the architecture is not suitable , or the reward may be delayed.
-}\\
+\begin{figure}[!htbp]
+  \centering
+  \includegraphics[width=9.5cm, height=4cm]{Avg Q-4.png}
+  \label{fig:avg-q-4}
+\end{figure}
 
-\textbf{Average Action (Noise)}\\
 
+
+\subsubsection{Average velocity}\\
+\textit{Average velocity} graph increases initially and then plateaus over time, indicating that the agent is enhancing its ability to move efficiently through the environment but has reached a performance limit. Adjusting the agent's training parameters or exploring new techniques may be needed to further improve performance. Alternatively, the velocity plateau could be attributed to characteristics of the environment.
 \graphicspath{ {./images/} }
-\includegraphics[width=9.5cm, height=4cm]{Avg Action (noise)-3.png}
-\caption{Figure 5.33: \textit{Avg Action (noise) } graph fluctuates over time, it suggests that the agent is experiencing some level of instability or variability in its exploration behavior.
-}\\
+\begin{figure}[!htbp]
+  \centering
+  \includegraphics[width=10.5cm, height=6cm]{Avg velocity-3.png}
+  \caption{Average Velocity graph for TD3-PER}
+  \label{fig:avg-velocity-3}
+\end{figure}
 
-\textbf{Average Q}\\
 
+\subsubsection{Best Y}\\
+\textit{Best Y} - An increase in this graph typically indicates that the agent is learning and improving its performance over time. Specifically, it suggests that the agent is discovering better policies for interacting with the environment, resulting in higher rewards or improved performance.
 \graphicspath{ {./images/} }
-\includegraphics[width=9.5cm, height=4cm]{Avg Q-4.png}
-\caption{Figure 5.34: \textit{Average Q :}  graph increases over time, it suggests that the agent is improving its estimates of the optimal state-action value function and making better decisions.
-}\\
+\begin{figure}[!htbp]
+  \centering
+  \includegraphics[width=9.5cm, height=4cm]{Best Y-5.png}
+  \caption{Best Y graph for TD3-PER}
+  \label{fig:best-y-5}
+\end{figure}
 
 
-\textbf{Average velocity}\\
-
+\subsubsection{Critic Loss}\\
+\textit{Critic Loss} - An increase in this graph over time suggests that the agent is not learning effectively and is not improving its value function. This could be due to a high learning rate, an unsuitable architecture, or delayed rewards.
 \graphicspath{ {./images/} }
-\includegraphics[width=9.5cm, height=4cm]{Avg velocity-3.png}
-\caption{Figure 5.35: \textit{Average velocity: } graph increases initially and then plateaus over time, it suggests that the agent is improving its ability to move efficiently through the environment, but has reached a limit in its performance. It may be necessary to adjust the agent's training parameters or explore new techniques to continue improving its performance. Alternatively, it is possible that the plateau in the average velocity is due to the environment itself.
-}\\
+\begin{figure}[!htbp]
+  \centering
+  \includegraphics[width=9.5cm, height=4cm]{Critic loss-5.png}
+  \caption{Critic loss graph for TD3-PER}
+  \label{fig:critic-loss-5}
+\end{figure}
 
-\textbf{Best Y}\\
 
+\subsubsection{Level}\\
+\textit{Level} - An increase in this graph over time suggests that the agent is improving its performance on the task at hand.
 \graphicspath{ {./images/} }
-\includegraphics[width=9.5cm, height=4cm]{Best Y-5.png}
-\caption{Figure 5.36: \textit{Best Y: } When this graph increases, it typically means that the agent is learning and improving its performance over time. Specifically, it suggests that the agent is finding better policies for interacting with the environment, resulting in higher rewards or better performance.
-}\\
+\begin{figure}[!htbp]
+  \centering
+  \includegraphics[width=10.5cm, height=6cm]{Level-5.png}
+  \caption{Level graph for TD3-PER}
+  \label{fig:level-5}
+\end{figure}
 
-\textbf{Critic Loss}\\
 
+\subsubsection{Score}\\
+\textit{Score} - An increase in this graph over time suggests that the agent is improving its performance on the task at hand.
 \graphicspath{ {./images/} }
-\includegraphics[width=9.5cm, height=4cm]{Critic loss-5.png}
-\caption{Figure 5.37: \textit{Critic Loss:}  graph increases over time, it suggests that the agent is not learning effectively and is not improving its value function as it may have a high learning rate, architecture may not be well suited or the rewards may be delayed.
-}\\
+\begin{figure}[!htbp]
+  \centering
+  \includegraphics[width=10.5cm, height=6cm]{Score-5.png}
+  \caption{Score graph for TD3-PER}
+  \label{fig:score-5}
+\end{figure}
 
-\textbf{Level}\\
 
+\subsubsection{Step}\\
+\textit{Step} - An increase in this graph over time suggests that the agent is improving its performance on the task at hand.
 \graphicspath{ {./images/} }
-\includegraphics[width=9.5cm, height=4cm]{Level-5.png}
-\caption{Figure 5.38: \textit{Level:} graph increases over time, it suggests that the agent is improving its performance on the task at hand.
-}\\
+\begin{figure}[!htbp]
+  \centering
+  \includegraphics[width=9.5cm, height=4cm]{Step-5.png}
+  \caption{Step graph for TD3-PER}
+  \label{fig:step-5}
+\end{figure}
 
-\textbf{Score}\\
-
-\graphicspath{ {./images/} }
-\includegraphics[width=9.5cm, height=4cm]{Score-5.png}
-\caption{Figure 5.39: \textit{Score }graph increases over time, it suggests that the agent is improving its performance on the task at hand.
-}\\
-
-\textbf{Step}\\
-
-\graphicspath{ {./images/} }
-\includegraphics[width=9.5cm, height=4cm]{Step-5.png}
-\caption{Figure 5.40:\textit{Step: }graph increases over time, it suggests that the agent is improving its performance on the task at hand.
-}\\
 
 \subsection{Proximal Policy Optimization}\\
-
-\textbf{PPO}\\
-
 PPO (Proximal Policy Optimization) is a reinforcement learning algorithm used for training agent-based systems that can learn to perform tasks in an environment. It is an improvement over the classic policy gradient algorithm, which suffers from high variance and instability issues. It uses an objective function that includes two terms: a clipped surrogate objective and an entropy bonus. The clipped surrogate objective is used to constrain the size of policy updates so that the changes are not too large, which helps to prevent the agent from diverging too far from its current policy. The entropy bonus encourages exploration and prevents the agent from becoming too certain about its actions.\\
+
 The PPO algorithm operates in two phases: sampling and optimization. During the sampling phase, the agent collects a set of trajectories by taking actions in the environment. These trajectories are used to estimate the expected returns and advantages for each state-action pair. The advantages represent how much better or worse the agent's actions were compared to a baseline, which is typically the value function estimated by a critic.\\
-In the optimization phase, the clipped surrogate objective is maximized using a batch of collected trajectories. The clipping mechanism ensures that the policy updates are not too large, which helps to stabilize the training process. The entropy bonus is also added to the objective to encourage exploration.\\
 
+In the subsequent optimization phase, PPO maximizes the clipped surrogate objective. This objective ensures that policy updates are controlled and not excessively aggressive, promoting training stability. Additionally, PPO incorporates the entropy bonus into the objective, reinforcing exploration throughout the learning process.\\
 
-\textbf{Best Y}\\
+In the optimization phase, the clipped surrogate objective is maximized using a batch of collected trajectories. The clipping mechanism ensures that the policy updates are not too large, which helps to stabilize the training process. The entropy bonus is also added to the objective to encourage exploration. The clipped surrogate objective plays a pivotal role in maintaining the stability of policy updates.\\
+
+It serves to constrain the size of these updates, preventing the agent from making excessively large policy changes that could lead to divergence. This controlled adaptation ensures that the agent remains close to its current policy while still exploring new strategies.\\
+PPO's two-phase approach, combining trajectory sampling and optimization, underpins its ability to excel in both theory and practice, making it a cornerstone algorithm in the field of reinforcement learning\\
+
+\begin{algorithm}[!htbp]
+\caption{Proximal Policy Optimization (PPO) Algorithm}
+\begin{algorithmic}
+    \STATE Initialize policy network $\pi$ with parameters $\theta$\\
+    \STATE Initialize value function network $V$ with parameters $\phi$\\
+    \STATE Initialize environment and hyperparameters\\
+    \FOR{each iteration}\\
+        \STATE Collect a set of trajectories by taking actions in the environment using the current policy\\
+        \STATE Estimate expected returns and advantages for each state-action pair using trajectories and the value function network\\
+        \STATE Calculate the clipped surrogate objective using advantages and old policy probabilities:\\
+        \STATE \quad $\text{Surrogate Objective} = \min\left(\frac{\pi(a|s, \theta)}{\pi_{\text{old}}(a|s, \theta)}A(s, a),\\
+        \text{clip}\left(\frac{\pi(a|s, \theta)}{\pi_{\text{old}}(a|s, \theta)}, 1 - \epsilon, 1 + \epsilon\right)A(s, a)\right)$\\
+        \STATE Calculate the entropy bonus: $\text{Entropy Bonus} = -\beta \sum \pi(a|s, \theta) \log \pi(a|s, \theta)$\\
+        \STATE Formulate the total objective: $\text{Total Objective} = \text{Surrogate Objective} + \text{Entropy Bonus}$\\
+        \STATE Update policy network by maximizing the total objective: $\theta \leftarrow \theta + \alpha \nabla_\theta \text{Total Objective}$\\
+        \STATE Update the value function network $V$ by minimizing the mean squared error with the estimated returns\\
+    \ENDFOR\\
+\end{algorithmic}
+\end{algorithm}
+
+\subsubsection{Best Y}
+An increase in this graph typically indicates that the agent is learning and improving its performance over time. Specifically, it suggests that the agent is finding better policies for interacting with the environment, resulting in higher rewards or better performance.
+\graphicspath{ {./images/} }
+\begin{figure}[!htbp]
+  \centering
+  \includegraphics[width=10.5cm, height=6cm]{Best Y-6.png}
+  \caption{Best Y graph for Proximal Policy Optimization (PPO) Algorithm}
+  \label{fig:best-y-6}
+\end{figure}\\
+
+\section{Decentralisation Framework}
+
+The decentralisation framework is quite avid and simple, the drones set off in pairs initially - one drone with the package and the other drone monitoring the host, the role of the secondary drone initially is to cover the blind spots of the first drone so that it can relay a reliable way point structure that can be taken by the other subsequent drones that will operate eventually. The algorithms mentioned above are the obstacle avoidance algorithms which is highly crucial in real world scenarios where things like birds / lamp poles / electric cables are highly unpredictable, and often, goes beyond the blind spot of one single drone; the drones will adapt to the situation and initially carry out the obstacle avoidance using the standard TD3 algorithm by default and shift between the other algorithms in case of edge case scenarios where one algorithm outperforms the others in a certain set of circumstances. \\
 
 \graphicspath{ {./images/} }
-\includegraphics[width=9.5cm, height=4cm]{Best Y-6.png}
-\caption{Figure 5.41: \textit{Best Y: }When this graph increases, it typically means that the agent is learning and improving its performance over time. Specifically, it suggests that the agent is finding better policies for interacting with the environment, resulting in higher rewards or better performance.
-}\\
+\begin{figure}[!htbp]
+  \centering
+  \includegraphics[width=9cm, height=4cm]{images/squadrone.png}
+  \caption{\textit{Set of drones stationed at an initial home point.}}
+  \label{fig:sqd}
+\end{figure}
+
+\graphicspath{ {./images/} }
+\begin{figure}[!htbp]
+  \centering
+  \includegraphics[width=9cm, height=4cm]{images/environment.png}
+  \caption{\textit{Custom neighbourhood environment in Unreal Engine where the simulation was carried out.}}
+  \label{fig:sqd}
+\end{figure}
+
+\graphicspath{ {./images/} }
+\begin{figure}[!htbp]
+  \centering
+  \includegraphics[width=9cm, height=4cm]{takeoff.png}
+  \caption{\textit{Main drone and Support drone taking off towards the drop point.}}
+  \label{fig:6}
+\end{figure}
+
+\graphicspath{ {./images/} }
+\begin{figure}[!htbp]
+  \centering
+  \includegraphics[width=9cm, height=4cm]{second-pov.png}
+  \caption{\textit{Second drone's POV of the First drone as it monitors the surroundings of the First drone.}}
+  \label{fig:7}
+\end{figure}
+
+\graphicspath{ {./images/} }
+\begin{figure}[!htbp]
+  \centering
+  \includegraphics[width=9cm, height=4cm]{6.png}
+  \caption{\textit{Frames from the First drone navigating towards the drop point.}}
+  \label{fig:8}
+\end{figure}
+
+\graphicspath{ {./images/} }
+\begin{figure}[!htbp]
+  \centering
+  \includegraphics[width=9cm, height=4cm]{7.png}
+  \caption{\textit{Frames from the Second drone watching the First drone navigating towards the drop point.}}
+  \label{fig:8}
+\end{figure}
+
+\graphicspath{ {./images/} }
+\begin{figure}[!htbp]
+  \centering
+  \includegraphics[width=9cm, height=4cm]{images/open3d-point-cloud.png}
+  \caption{\textit{Open-3D point clouds generated by the first drone to navigate using the  depth data via Visual-SLAM.}}
+  \label{fig:8}
+\end{figure}
+
+\graphicspath{ {./images/} }
+\begin{figure}[!htbp]
+  \centering
+  \includegraphics[width=9cm, height=4cm]{images/waypoint1.png}
+  \caption{\textit{Way-points generated by the first drone while navigating towards the drop point.}}
+  \label{fig:8}
+\end{figure}
+
+\graphicspath{ {./images/} }
+\begin{figure}[!htbp]
+  \centering
+  \includegraphics[width=9cm, height=4cm]{images/waypoint2.png}
+  \caption{\textit{Way-points generated by the second drone while watching the first drone navigating towards the drop point.}}
+  \label{fig:8}
+\end{figure}
+
+\graphicspath{ {./images/} }
+\begin{figure}[!htbp]
+  \centering
+  \includegraphics[width=9cm, height=3cm]{8.png}
+  \caption{\textit{End of drop, both the drones part away.}}
+  \label{fig:8}
+\end{figure}
+
+\subsection{\textbf{\textit{Comparison Results for the algorithms based on various parameters : }}}
+
+\subsubsection{Best Record}
+\begin{figure}[!htbp]
+  \centering
+  \includegraphics[width=8cm, height=4cm]{result_Best Record 2.png}
+  \caption{The X-axis denotes the number of episodes, and the Y-axis denotes the Best Record parameter.}
+  \label{fig:best-record}
+\end{figure}
+
+\subsubsection{Getting Goal Probability}
+\begin{figure}[!htbp]
+  \centering
+  \includegraphics[width=8cm, height=4cm]{result_Get Goal Prob. 2.png}
+  \caption{The X-axis denotes the number of episodes, and the Y-axis denotes the getting goal probability parameter.}
+  \label{fig:getting-goal-probability}
+\end{figure}
+
+\subsubsection{Step for Goal}
+\begin{figure}[!htbp]
+  \centering
+  \includegraphics[width=8cm, height=6cm]{result_Step for Goal 2.png}
+  \caption{The X-axis denotes the number of episodes, and the Y-axis denotes the step for goal parameter.}
+  \label{fig:step-for-goal}
+\end{figure}
+
+\subsubsection{Step per Record}
+\begin{figure}[!htbp]
+  \centering
+  \includegraphics[width=8cm, height=6cm]{result_Step per Record 2.png}
+  \caption{The X-axis denotes the number of episodes, and the Y-axis denotes the step per record parameter}
+  \label{fig:step-per-record}
+\end{figure}
+
+\subsubsection{Step}
+The number of steps taken per episodes for each parameters are recorded here.
+\begin{figure}[!htbp]
+  \centering
+  \includegraphics[width=8cm, height=6cm]{result_Step 2.png}
+  \caption{The X-axis denotes the number of episodes, and the Y-axis denotes the step parameter.}
+  \label{fig:step}
+\end{figure}
+
+\subsubsection{Power Comparison}
+Under different scenarios, the power densities were recorded and compared for similar existing systems.
+\begin{figure}[!htbp]
+  \centering
+  \includegraphics[width=8cm, height=6cm]{energy_power_density.png}
+  \caption{The power density vs. the energy density relative to present-day technology.}
+  \label{fig:power-comparison}
+\end{figure}
 
 
-
-\textbf{\textit{Comparison Results for the algorithms based on various parameters : }}
-\begin{enumerate}
-    \item Best Record\\
-    \graphicspath{ {./images/} }
-    \includegraphics[width=9cm, height=4cm]{result_Best Record 2.png}
-    \caption{Figure 5.42: The X axis denotes the number of episodes and the Y axis denotes the Best Record parameter.\\
-    }\\
-
-    \item Getting Goal Probability\\
-    \graphicspath{ {./images/} }
-    \includegraphics[width=9cm, height=4cm]{result_Get Goal Prob. 2.png}
-    \caption{Figure 5.43: The X axis denotes the number of episodes and the Y axis denotes the getting goal probability parameter.\\
-    }\\
-
-    \item Step for Goal\\
-    \graphicspath{ {./images/} }
-    \includegraphics[width=8.5cm, height=4cm]{result_Step for Goal 2.png}
-    \caption{Figure 5.44: The X axis denotes the number of episodes and the Y axis denotes the step for goal parameter.\\
-    }\\
-
-    \item Step per Record\\
-    \graphicspath{ {./images/} }
-    \includegraphics[width=8.5cm, height=4cm]{result_Step per Record 2.png}
-    \caption{Figure 5.45: The X axis denotes the number of episodes and the Y axis denotes the step per record parameter.\\
-    }\\
-
-    \item Step \\
-    \graphicspath{ {./images/} }
-    \includegraphics[width=8.5cm, height=4cm]{result_Step 2.png}}
-    \caption{Figure 5.46: The X axis denotes the number of episodes and the Y axis denotes the step parameter.\\
-    }\\
-
-    \item Power Comparison\\
-    \graphicspath{ {./images/} }
-    \includegraphics[width=6.5cm, height=4cm]{energy_power_density.png}}\\
-    \caption{Figure 5.47: The power density vs. the energy density relative to present-day technology. \\
-    }\\
-    
-
-    
-\end{enumerate}
 
 \section{Conclusion}
 
-In conclusion, DecentraliDrone is an innovative drone delivery system that has the potential to revolutionize the way we transport goods. By leveraging advanced technology and a decentralized architecture, DecentraliDrone is able to operate autonomously and efficiently, without the need for human intervention. The system has numerous potential applications, from delivering medical supplies to remote areas to transporting goods between urban centers.
+In conclusion, the decentralization framework presented in this context is not only straightforward but also highly adaptable, making it a robust solution for real-world drone operations. Initially, drones are deployed in pairs, with one drone carrying the package and the other serving as a monitor. The secondary drone's primary role is to mitigate any blind spots, ensuring that the leading drone can establish a reliable way-point structure. This structure can then be utilized by subsequent drones, enhancing the overall efficiency of the operation.\\
 
-While there are still challenges that need to be addressed, such as developing robust communication protocols and ensuring the safety and security of the system, the progress that has been made so far is promising. The successful simulation of the system using the TD3-PER algorithm provides a strong foundation for future work, which will involve application development, hardware deployment, and field testing.
+Crucially, the framework incorporates obstacle avoidance algorithms, addressing unpredictable obstacles like birds, lamp poles, and electric cables. These scenarios often extend beyond the visual range of a single drone. To handle such situations, the drones employ the standard TD3 (Twin Delayed Deep Deterministic Policy Gradients) algorithm for obstacle avoidance by default. However, they have the flexibility to switch between various obstacle avoidance algorithms when specific conditions or edge cases demand a different approach. This adaptability ensures that the drone fleet can effectively navigate complex and dynamic environments.\\
 
-Overall, DecentraliDrone represents a promising step forward in the field of autonomous delivery systems, and has the potential to bring us closer to a more interconnected and efficient world.
-
+This decentralization framework, with its combination of cooperative monitoring, adaptive obstacle avoidance, and algorithm versatility, offers a comprehensive solution for real-world drone missions, making it well-suited to a wide range of applications and operational scenarios.\\
 
 
 
@@ -839,12 +1354,6 @@ R. ~Munguía, S. Urzua, Y. Bolea, and A. Grau, “Vision-Based SLAM System for U
 
 \bibitem{lópez2017sensorial}
 E. ~López et al., “A Multi-Sensorial Simultaneous Localization and Mapping (SLAM) System for Low-Cost Micro Aerial Vehicles in GPS-Denied Environments,” \emph{Sensors}, vol. 17, no. 4, p. 802, Apr. 2017, doi: 10.3390/s17040802.
-
-\bibitem{mahdoui2019multiUAV}
-N. ~Mahdoui, V. ~Frémont, and E. ~Natalizio, “Communicating Multi-UAV System for Cooperative SLAM-based Exploration,” Journal of Intelligent &amp; \emph{Robotic Systems}, vol. 98, no. 2, pp. 325–343, Nov. 2019, doi: 10.1007/s10846-019-01062-6.
-
-\bibitem{xu2022decentalized}
-H. ~Xu, P. ~Liu, X. ~Chen, S. ~Shen, “Decentralized and distributed collaborative simultaneous localization and mapping system for aerial swarms”, doi: 10.14711/thesis-991013142455303412.
 
 \bibitem{jarrah2022flight}
 K. ~Jarrah, Y. ~Alali, A. ~Lalko, and O. ~Rawashdeh, “Flight Time Optimization and Modeling of a Hybrid Gasoline–Electric Multirotor Drone: An Experimental Study,” \emph{Aerospace}, vol. 9, no. 12, p. 799, Dec. 2022, doi: 10.3390/aerospace9120799.
@@ -875,18 +1384,6 @@ M. S. ~Innocente and P. ~Grasso, “Self-organising swarms of firefighting drone
 
 \bibitem{kyriakakis2021moving}
 N. A. Kyriakakis, M. Marinaki, N. Matsatsinis, and Y. Marinakis, “Moving peak drone search problem: An online multi-swarm intelligence approach for UAV search operations,” Swarm and Evolutionary Computation, vol. 66, p. 100956, Oct. 2021, doi: 10.1016/j.swevo.2021.100956.
-
-\bibitem{bartolini2020druber}
-N. Bartolini, A. Coletta, G. Maselli, and M. Piva, “DRUBER,” Proceedings of the 6th ACM Workshop on Micro Aerial Vehicle Networks, Systems, and Applications, Jun. 2020, doi: 10.1145/3396864.3399706.
-
-\bibitem{chen2010hybrid}
-H. ~Chen and A. ~Khaligh, “Hybrid energy storage system for unmanned aerial vehicle (UAV),” \emph{IECON 2010 - 36th Annual Conference on IEEE Industrial Electronics Society}, Nov. 2010, doi: 10.1109/iecon.2010.5675076.
-
-\bibitem{islam2019path}
-S. ~Islam and A. ~Razi, “A Path Planning Algorithm for Collective Monitoring Using Autonomous Drones,” 2019 53rd \emph{Annual Conference on Information Sciences and Systems (CISS)}, Mar. 2019, doi: 10.1109/ciss.2019.8693023.
-
-\bibitem{hong2021energy}
-D. ~Hong, S. ~Lee, Y. H. ~Cho, D. ~Baek, J. ~Kim, and N. ~Chang, “Energy-Efficient Online Path Planning of Multiple Drones Using Reinforcement Learning,” \emph{IEEE Transactions on Vehicular Technology}, vol. 70, no. 10, pp. 9725–9740, Oct. 2021, doi: 10.1109/tvt.2021.3102589.
 
 \bibitem{xu2022omni}
 H. ~Xu et al., “Omni-Swarm: A Decentralized Omnidirectional Visual–Inertial–UWB State Estimation System for Aerial Swarms,” \emph{IEEE Transactions on Robotics}, vol. 38, no. 6, pp. 3374–3394, Dec. 2022, doi: 10.1109/tro.2022.3182503.
